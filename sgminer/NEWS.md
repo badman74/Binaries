@@ -2,7 +2,6 @@
 
 ## Version 4.2.0 - TBA
 
-* Forward-port changes from `ckolivas/cgminer` up to 3.12.3., and then some (up to 133252175b90159d18151b004bf767d5a43812ea).
 * Adaptive-N-factor algorithm support (by _Bufius_, _Zuikkis_ and
   _veox_). For details on choosing the algorithm, see
   `doc/configuration.md`.
@@ -13,23 +12,25 @@
 * Multiple `--name` parsing should now work as expected (by _troky_).
 * `--coin` configuration parameter to specify a freeform pool
   description (by _troky_).
-* Added new kernels for cpu coins
-  quark --quarkcoin
-  qubit --qubitcoin
-  dark --darkcoin
-  myriad --myriadcoin-groestl
-  ink --inkcoin
-  anime --animecoin
-  fugue --fuguecoin
-  sif --sifcoin
-  groestl --groestlcoin
-  twe --twecoin
+* Added new Algorithms for cpu coins
+  nscrypt --algorithm nscrypt
+  scrypt-jane --algorithm scrypt-jane
+  quark --algorithm quarkcoin
+  qubit --algorithm qubitcoin
+  dark --algorithm darkcoin
+  myriad --algorithm myriadcoin-groestl
+  ink --algorithm inkcoin
+  anime --algorithm animecoin
+  fugue --algorithm fuguecoin
+  sif --algorithm sifcoin
+  groestl --algorithm groestlcoin
+  twe --algorithm twecoin
+  maru --algorithm marucoin
 * A new option was added: --difficulty-multiplier. 
   It allows to set stratum difficulty multiplier. 
-  For QubitCoin, Quark and Animecoin it will be usually 256. 
-  For Groestlcoin, Fuguecoin and Twecoin it will be usually 0.0039062500 (1/256). 
-  Default value is 1.0. If you have "share above target" errors then set it to 256. 
-  If difficulty required by pool is strangely large, set it to 0.0039062500 (1/256). 
+  The multipliers are 0.0039062500 (1/256), 1.0, and 256
+  If you have "share above target" errors then set it to 1.0 or 256. 
+  If difficulty required by pool is strangely large, set it to 1.0 or 0.0039062500 (1/256). 
   Other values are unlikely to be used. Hopefully this will fix all remaining stratum problems.
 
 
