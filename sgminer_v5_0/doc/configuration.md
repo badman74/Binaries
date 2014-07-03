@@ -717,6 +717,8 @@ Set GPU lookup gap for scrypt mining.
 
 *Available*: Global, Pool, Profile
 
+*Algorithms*: `scrypt` `nscrypt`
+
 *Config File Syntax:* `"lookup-gap":"<value>"`
 
 *Command Line Syntax:* `--lookup-gap "<value>"` `--pool-lookup-gap "<value>"` `--profile-lookup-gap "<value>"`
@@ -732,6 +734,8 @@ Set GPU lookup gap for scrypt mining.
 Overrides the default scrypt parameter N, specified as the factor of 2 (`N = 2^nfactor`). 
 
 *Available*: Global, Pool, Profile
+
+*Algorithms*: `nscrypt`
 
 *Config File Syntax:* `"nfactor":"<value>"`
 
@@ -749,13 +753,15 @@ Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are
 
 *Available*: Global
 
+*Algorithms*: `X13` `X14` `X15`
+
 *Config File Syntax:* `"hamsi-expand-big":"<value>"`
 
 *Command Line Syntax:* `--hamsi-expand-big <value>`
 
-*Argument:* `4` or `1`
+*Argument:* `number` (`1` or `4` are common)
 
-*Default:* `4`
+*Default:* `1` (`4` for kernels labeled "old")
 
 [Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Algorithm Options](#algorithm-options)
 
@@ -764,6 +770,8 @@ Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are
 Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
+
+*Algorithms*: `X13` `X14` `X15`
 
 *Config File Syntax:* `"hamsi-short":true`
 
@@ -777,9 +785,11 @@ Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashr
 
 ### shaders
 
-Number of shaders per GPU for algorithm tuning.
+Number of shaders per GPU for algorithm tuning. This is used to calculate `thread-concurrency` if not specified.
 
 *Available*: Global, Pool, Profile
+
+*Algorithms*: `scrypt` `nscrypt`
 
 *Config File Syntax:* `"shaders":"<value>"`
 
@@ -797,6 +807,8 @@ Number of concurrent threads per GPU for mining.
 
 *Available*: Global, Pool, Profile
 
+*Algorithms*: `scrypt` `nscrypt`
+
 *Config File Syntax:* `"thread-concurrency":"<value>"`
 
 *Command Line Syntax:* `--thread-concurrency "<value>"` `--pool-thread-concurrency "<value>"` `--profile-thread-concurrency "<value>"`
@@ -812,6 +824,8 @@ Number of concurrent threads per GPU for mining.
 Amount of work handled by GPUs per work request.
 
 *Available*: Global, Pool, Profile
+
+*Algorithms*: `all`
 
 *Config File Syntax:* `"worksize":"<value>"`
 
