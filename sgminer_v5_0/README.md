@@ -80,6 +80,8 @@ If needed, place include headers (`*.h` files) from `ADL_SDK_*<VERSION>*.zip` in
 
 Then:
 
+    git submodule init
+    git submodule update
     autoreconf -i
     CFLAGS="-O2 -Wall -march=native" ./configure <options>
     make
