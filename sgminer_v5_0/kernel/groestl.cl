@@ -1402,17 +1402,15 @@ __constant static const sph_u64 T7[] = {
 
 #define PERM_BIG_P(a)   do { \
     int r; \
-    for (r = 0; r < 14; r += 2) { \
-      ROUND_BIG_P(a, r + 0); \
-      ROUND_BIG_P(a, r + 1); \
+    for (r = 0; r < 14; r ++) { \
+      ROUND_BIG_P(a, r); \
     } \
   } while (0)
 
 #define PERM_BIG_Q(a)   do { \
     int r; \
-    for (r = 0; r < 14; r += 2) { \
-      ROUND_BIG_Q(a, r + 0); \
-      ROUND_BIG_Q(a, r + 1); \
+    for (r = 0; r < 14; r ++) { \
+      ROUND_BIG_Q(a, r); \
     } \
   } while (0)
 
