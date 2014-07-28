@@ -68,13 +68,13 @@ typedef long sph_s64;
 #define SPH_JH_64 1
 #define SPH_SIMD_NOCOPY 0
 #define SPH_KECCAK_NOCOPY 0
-#define SPH_COMPACT_BLAKE_64 0
-#define SPH_LUFFA_PARALLEL 0
+#define SPH_COMPACT_BLAKE_64 1
+#define SPH_LUFFA_PARALLEL 1
 #define SPH_SMALL_FOOTPRINT_GROESTL 0
 #define SPH_GROESTL_BIG_ENDIAN 0
 
 #define SPH_CUBEHASH_UNROLL 0
-#define SPH_KECCAK_UNROLL   0
+#define SPH_KECCAK_UNROLL 6
 
 #include "blake.cl"
 #include "bmw.cl"

@@ -65,7 +65,7 @@ typedef long sph_s64;
 
 #define SPH_ECHO_64 1 // 0,1
 #define SPH_SIMD_NOCOPY 0 // do not copy the state into local variables
-#define SPH_LUFFA_PARALLEL 0 // 0,1 (causes crashes in some gpu's)
+#define SPH_LUFFA_PARALLEL 1 // 0,1 (causes crashes in some gpu's)
 #define SPH_CUBEHASH_UNROLL 0 // 0,2,4,8
 
 #include "groestl.cl"

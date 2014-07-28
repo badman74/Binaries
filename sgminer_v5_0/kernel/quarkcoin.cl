@@ -68,14 +68,14 @@ typedef long sph_s64;
 #define SPH_JH_64 1 // 0,1
 #define SPH_SIMD_NOCOPY 0 // do not copy the state into local variables
 #define SPH_KECCAK_NOCOPY 0 // do not copy the state into local variables
-#define SPH_COMPACT_BLAKE_64 0 // 0,1
+#define SPH_COMPACT_BLAKE_64 1 // 0,1
 #define SPH_LUFFA_PARALLEL 1 // 0,1 (causes crashes in some gpu's)
 #ifndef SPH_SMALL_FOOTPRINT_GROESTL
   #define SPH_SMALL_FOOTPRINT_GROESTL 0 // 0,1
 #endif
 #define SPH_GROESTL_BIG_ENDIAN 0 // 0,1
 #define SPH_CUBEHASH_UNROLL 0 // 0,2,4,8
-#define SPH_KECCAK_UNROLL 0 // number of loops to unroll (0/undef for full unroll) 0,1,2,4,6,8,12
+#define SPH_KECCAK_UNROLL 6 // number of loops to unroll (0/undef for full unroll) 0,1,2,4,6,8,12
 
 #include "blake.cl"
 #include "bmw.cl"
