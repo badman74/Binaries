@@ -1,11 +1,11 @@
 /*
- * X14 kernel implementation.
+ * X15 kernel implementation.
  *
  * ==========================(LICENSE BEGIN)============================
  *
  * Copyright (c) 2014  phm
  * Copyright (c) 2014 Girino Vey
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -13,10 +13,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -30,8 +30,8 @@
  * @author   phm <phm@inbox.com>
  */
 
-#ifndef X14_CL
-#define X14_CL
+#ifndef BITBLOCK_CL
+#define BITBLOCK_CL
 
 #if __ENDIAN_LITTLE__
 #define SPH_LITTLE_ENDIAN 1
@@ -64,19 +64,24 @@ typedef long sph_s64;
 #define SPH_ROTL64(x, n)   SPH_T64(((x) << (n)) | ((x) >> (64 - (n))))
 #define SPH_ROTR64(x, n)   SPH_ROTL64(x, (64 - (n)))
 
-#define SPH_ECHO_64 1 // 0,1
-#define SPH_KECCAK_64 1 // 0,1
-#define SPH_JH_64 1 // 0,1
-#define SPH_SIMD_NOCOPY 0 // do not copy the state into local variables
-#define SPH_KECCAK_NOCOPY 0 // do not copy the state into local variables
-#define SPH_COMPACT_BLAKE_64 1 // 0,1
-#define SPH_LUFFA_PARALLEL 1 // 0,1 (causes crashes in some gpu's)
-#ifndef SPH_SMALL_FOOTPRINT_GROESTL
-  #define SPH_SMALL_FOOTPRINT_GROESTL 0 // 0,1
+#define SPH_ECHO_64 1
+#define SPH_KECCAK_64 1
+#define SPH_JH_64 1
+#define SPH_SIMD_NOCOPY 0
+#define SPH_KECCAK_NOCOPY 0
+#define SPH_SMALL_FOOTPRINT_GROESTL 0
+#define SPH_GROESTL_BIG_ENDIAN 0
+#define SPH_CUBEHASH_UNROLL 0
+
+#ifndef SPH_COMPACT_BLAKE_64
+  #define SPH_COMPACT_BLAKE_64 0
 #endif
-#define SPH_GROESTL_BIG_ENDIAN 0 // 0,1
-#define SPH_CUBEHASH_UNROLL 0 // 0,2,4,8
-#define SPH_KECCAK_UNROLL 6 // number of loops to unroll (0/undef for full unroll) 0,1,2,4,6,8,12
+#ifndef SPH_LUFFA_PARALLEL
+  #define SPH_LUFFA_PARALLEL 0
+#endif
+#ifndef SPH_KECCAK_UNROLL
+  #define SPH_KECCAK_UNROLL 0
+#endif
 #ifndef SPH_HAMSI_EXPAND_BIG
   #define SPH_HAMSI_EXPAND_BIG 4
 #endif
@@ -95,7 +100,7 @@ typedef long sph_s64;
 #include "hamsi.cl"
 #include "fugue.cl"
 #include "shabal.cl"
-
+#include "whirlpool.cl"
 
 #define SWAP4(x) as_uint(as_uchar4(x).wzyx)
 #define SWAP8(x) as_ulong(as_uchar8(x).s76543210)
@@ -821,7 +826,7 @@ __kernel void search10(__global hash_t* hashes, __global uint* output, const ulo
     	mixtab3[i] = mixtab3_c[i];
     }
     barrier(CLK_LOCAL_MEM_FENCE);
-	
+
 
     for (int i = 0; i < 8; i++) {
         hash.h8[i] = hashes[gid-offset].h8[i];
@@ -1004,7 +1009,7 @@ __kernel void search10(__global hash_t* hashes, __global uint* output, const ulo
     hash.h4[15] = SWAP4(S30);
 
     }
-	
+
 	//shabal
 	{
     sph_u32 A00 = A_init_512[0], A01 = A_init_512[1], A02 = A_init_512[2], A03 = A_init_512[3], A04 = A_init_512[4], A05 = A_init_512[5], A06 = A_init_512[6], A07 = A_init_512[7],
@@ -1067,9 +1072,97 @@ __kernel void search10(__global hash_t* hashes, __global uint* output, const ulo
 	hash.h4[12] = BC;
 	hash.h4[13] = BD;
 	hash.h4[14] = BE;
-	hash.h4[15] = BF;	
+	hash.h4[15] = BF;
 	}
-	
+
+	//whirlpool
+	{
+    sph_u64 n0, n1, n2, n3, n4, n5, n6, n7;
+    sph_u64 h0, h1, h2, h3, h4, h5, h6, h7;
+    sph_u64 state[8];
+
+    n0 = (hash.h8[0]);
+    n1 = (hash.h8[1]);
+    n2 = (hash.h8[2]);
+    n3 = (hash.h8[3]);
+    n4 = (hash.h8[4]);
+    n5 = (hash.h8[5]);
+    n6 = (hash.h8[6]);
+    n7 = (hash.h8[7]);
+
+    h0 = h1 = h2 = h3 = h4 = h5 = h6 = h7 = 0;
+
+    n0 ^= h0;
+    n1 ^= h1;
+    n2 ^= h2;
+    n3 ^= h3;
+    n4 ^= h4;
+    n5 ^= h5;
+    n6 ^= h6;
+    n7 ^= h7;
+
+    for (unsigned r = 0; r < 10; r ++) {
+	sph_u64 tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
+
+	ROUND_KSCHED(plain_T, h, tmp, plain_RC[r]);
+	TRANSFER(h, tmp);
+	ROUND_WENC(plain_T, n, h, tmp);
+	TRANSFER(n, tmp);
+    }
+
+    state[0] = n0 ^ (hash.h8[0]);
+    state[1] = n1 ^ (hash.h8[1]);
+    state[2] = n2 ^ (hash.h8[2]);
+    state[3] = n3 ^ (hash.h8[3]);
+    state[4] = n4 ^ (hash.h8[4]);
+    state[5] = n5 ^ (hash.h8[5]);
+    state[6] = n6 ^ (hash.h8[6]);
+    state[7] = n7 ^ (hash.h8[7]);
+
+    n0 = 0x80;
+    n1 = n2 = n3 = n4 = n5 = n6 = 0;
+    n7 = 0x2000000000000;
+
+    h0 = state[0];
+    h1 = state[1];
+    h2 = state[2];
+    h3 = state[3];
+    h4 = state[4];
+    h5 = state[5];
+    h6 = state[6];
+    h7 = state[7];
+
+    n0 ^= h0;
+    n1 ^= h1;
+    n2 ^= h2;
+    n3 ^= h3;
+    n4 ^= h4;
+    n5 ^= h5;
+    n6 ^= h6;
+    n7 ^= h7;
+
+    for (unsigned r = 0; r < 10; r ++) {
+	sph_u64 tmp0, tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7;
+
+	ROUND_KSCHED(plain_T, h, tmp, plain_RC[r]);
+	TRANSFER(h, tmp);
+	ROUND_WENC(plain_T, n, h, tmp);
+	TRANSFER(n, tmp);
+    }
+
+    state[0] ^= n0 ^ 0x80;
+    state[1] ^= n1;
+    state[2] ^= n2;
+    state[3] ^= n3;
+    state[4] ^= n4;
+    state[5] ^= n5;
+    state[6] ^= n6;
+    state[7] ^= n7 ^ 0x2000000000000;
+
+    for (unsigned i = 0; i < 8; i ++)
+	hash.h8[i] = state[i];
+	}
+
     bool result = (hash.h8[3] <= target);
     if (result)
       output[atomic_inc(output+0xFF)] = SWAP4(gid);
@@ -1077,4 +1170,4 @@ __kernel void search10(__global hash_t* hashes, __global uint* output, const ulo
     barrier(CLK_GLOBAL_MEM_FENCE);
 }
 
-#endif // X14_CL
+#endif // BITBLOCK_CL

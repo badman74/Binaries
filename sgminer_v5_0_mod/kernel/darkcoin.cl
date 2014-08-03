@@ -1,5 +1,5 @@
 /*
- * X13 kernel implementation.
+ * X11 kernel implementation.
  *
  * ==========================(LICENSE BEGIN)============================
  *
@@ -29,8 +29,8 @@
  * @author   phm <phm@inbox.com>
  */
 
-#ifndef MARUCOIN_CL
-#define MARUCOIN_CL
+#ifndef DARKCOIN_CL
+#define DARKCOIN_CL
 
 #if __ENDIAN_LITTLE__
 #define SPH_LITTLE_ENDIAN 1
@@ -63,21 +63,23 @@ typedef long sph_s64;
 #define SPH_ROTL64(x, n)   SPH_T64(((x) << (n)) | ((x) >> (64 - (n))))
 #define SPH_ROTR64(x, n)   SPH_ROTL64(x, (64 - (n)))
 
-#define SPH_ECHO_64 1 // 0,1
-#define SPH_KECCAK_64 1 // 0,1
-#define SPH_JH_64 1 // 0,1
-#define SPH_SIMD_NOCOPY 0 // do not copy the state into local variables
-#define SPH_KECCAK_NOCOPY 0 // do not copy the state into local variables
-#define SPH_COMPACT_BLAKE_64 1 // 0,1
-#define SPH_LUFFA_PARALLEL 1 // 0,1 (causes crashes in some gpu's)
-#ifndef SPH_SMALL_FOOTPRINT_GROESTL
-  #define SPH_SMALL_FOOTPRINT_GROESTL 0 // 0,1
+#define SPH_ECHO_64 1
+#define SPH_KECCAK_64 1
+#define SPH_JH_64 1
+#define SPH_SIMD_NOCOPY 0
+#define SPH_KECCAK_NOCOPY 0
+#define SPH_SMALL_FOOTPRINT_GROESTL 0
+#define SPH_GROESTL_BIG_ENDIAN 0
+#define SPH_CUBEHASH_UNROLL 0
+
+#ifndef SPH_COMPACT_BLAKE_64
+  #define SPH_COMPACT_BLAKE_64 0
 #endif
-#define SPH_GROESTL_BIG_ENDIAN 0 // 0,1
-#define SPH_CUBEHASH_UNROLL 0 // 0,2,4,8
-#define SPH_KECCAK_UNROLL 6 // number of loops to unroll (0/undef for full unroll) 0,1,2,4,6,8,12
-#ifndef SPH_HAMSI_EXPAND_BIG
-  #define SPH_HAMSI_EXPAND_BIG 4
+#ifndef SPH_LUFFA_PARALLEL
+  #define SPH_LUFFA_PARALLEL 0
+#endif
+#ifndef SPH_KECCAK_UNROLL
+  #define SPH_KECCAK_UNROLL   0
 #endif
 
 #include "blake.cl"
@@ -91,8 +93,6 @@ typedef long sph_s64;
 #include "shavite.cl"
 #include "simd.cl"
 #include "echo.cl"
-#include "hamsi.cl"
-#include "fugue.cl"
 
 #define SWAP4(x) as_uint(as_uchar4(x).wzyx)
 #define SWAP8(x) as_ulong(as_uchar8(x).s76543210)
@@ -174,7 +174,6 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
     hash.h8[6] = H6;
     hash.h8[7] = H7;
   }
-
   // bmw
   {
     sph_u64 BMW_H[16];
@@ -302,9 +301,8 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
     hash.h8[7] = SWAP8(h7);
   }
 
-  // jh
+   // jh
   {
-
     sph_u64 h0h = C64e(0x6fd14b963e00aa17), h0l = C64e(0x636a2e057a15d543), h1h = C64e(0x8a225e8d0c97ef0b), h1l = C64e(0xe9341259f2b3c361), h2h = C64e(0x891da0c1536f801e), h2l = C64e(0x2aa9056bea2b6d80), h3h = C64e(0x588eccdb2075baa6), h3l = C64e(0xa90f3a76baf83bf7);
     sph_u64 h4h = C64e(0x0169e60541e34a69), h4l = C64e(0x46b58a8e2e6fe65a), h5h = C64e(0x1047a7d0c1843c24), h5l = C64e(0x3b6e71b12d5ac199), h6h = C64e(0xcf57f6ec9db1f856), h6l = C64e(0xa706887c5716b156), h7h = C64e(0xe3c2fcdfe68517fb), h7l = C64e(0x545a4678cc8cdd4b);
     sph_u64 tmp;
@@ -388,7 +386,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
   }
 
   // luffa
-{
+  {
     sph_u32 V00 = SPH_C32(0x6d251e69), V01 = SPH_C32(0x44b051e0), V02 = SPH_C32(0x4eaa6fb4), V03 = SPH_C32(0xdbf78465), V04 = SPH_C32(0x6e292011), V05 = SPH_C32(0x90152df4), V06 = SPH_C32(0xee058139), V07 = SPH_C32(0xdef610bb);
     sph_u32 V10 = SPH_C32(0xc3b44b95), V11 = SPH_C32(0xd9d2f256), V12 = SPH_C32(0x70eee9a0), V13 = SPH_C32(0xde099fa3), V14 = SPH_C32(0x5d9b0557), V15 = SPH_C32(0x8fc944b3), V16 = SPH_C32(0xcf1ccf0e), V17 = SPH_C32(0x746cd581);
     sph_u32 V20 = SPH_C32(0xf7efc89d), V21 = SPH_C32(0x5dba5781), V22 = SPH_C32(0x04016ce5), V23 = SPH_C32(0xad659c05), V24 = SPH_C32(0x0306194f), V25 = SPH_C32(0x666d1836), V26 = SPH_C32(0x24aa230a), V27 = SPH_C32(0x8b264ae7);
@@ -732,129 +730,10 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
     Vb30 ^= hash.h8[6] ^ W30 ^ WB0;
     Vb31 ^= hash.h8[7] ^ W31 ^ WB1;
 
-    hash.h8[0] = Vb00;
-    hash.h8[1] = Vb01;
-    hash.h8[2] = Vb10;
-    hash.h8[3] = Vb11;
-    hash.h8[4] = Vb20;
-    hash.h8[5] = Vb21;
-    hash.h8[6] = Vb30;
-    hash.h8[7] = Vb31;
+    bool result = (Vb11 <= target);
+    if (result)
+      output[output[0xFF]++] = SWAP4(gid);
   }
-
-  // hamsi
-  {
-    sph_u32 c0 = HAMSI_IV512[0], c1 = HAMSI_IV512[1], c2 = HAMSI_IV512[2], c3 = HAMSI_IV512[3];
-    sph_u32 c4 = HAMSI_IV512[4], c5 = HAMSI_IV512[5], c6 = HAMSI_IV512[6], c7 = HAMSI_IV512[7];
-    sph_u32 c8 = HAMSI_IV512[8], c9 = HAMSI_IV512[9], cA = HAMSI_IV512[10], cB = HAMSI_IV512[11];
-    sph_u32 cC = HAMSI_IV512[12], cD = HAMSI_IV512[13], cE = HAMSI_IV512[14], cF = HAMSI_IV512[15];
-    sph_u32 m0, m1, m2, m3, m4, m5, m6, m7;
-    sph_u32 m8, m9, mA, mB, mC, mD, mE, mF;
-    sph_u32 h[16] = { c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, cA, cB, cC, cD, cE, cF };
-
-#define buf(u) hash.h1[i + u]
-    for(int i = 0; i < 64; i += 8) {
-      INPUT_BIG;
-      P_BIG;
-      T_BIG;
-    }
-#undef buf
-#define buf(u) (u == 0 ? 0x80 : 0)
-    INPUT_BIG;
-    P_BIG;
-    T_BIG;
-#undef buf
-#define buf(u) (u == 6 ? 2 : 0)
-    INPUT_BIG;
-    PF_BIG;
-    T_BIG;
-
-    for (unsigned u = 0; u < 16; u ++)
-      hash.h4[u] = h[u];
-  }
-
-  // fugue
-  {
-    sph_u32 S00, S01, S02, S03, S04, S05, S06, S07, S08, S09;
-    sph_u32 S10, S11, S12, S13, S14, S15, S16, S17, S18, S19;
-    sph_u32 S20, S21, S22, S23, S24, S25, S26, S27, S28, S29;
-    sph_u32 S30, S31, S32, S33, S34, S35;
-
-    ulong fc_bit_count = (sph_u64) 64 << 3;
-
-    S00 = S01 = S02 = S03 = S04 = S05 = S06 = S07 = S08 = S09 = S10 = S11 = S12 = S13 = S14 = S15 = S16 = S17 = S18 = S19 = 0;
-    S20 = SPH_C32(0x8807a57e); S21 = SPH_C32(0xe616af75); S22 = SPH_C32(0xc5d3e4db); S23 = SPH_C32(0xac9ab027);
-    S24 = SPH_C32(0xd915f117); S25 = SPH_C32(0xb6eecc54); S26 = SPH_C32(0x06e8020b); S27 = SPH_C32(0x4a92efd1);
-    S28 = SPH_C32(0xaac6e2c9); S29 = SPH_C32(0xddb21398); S30 = SPH_C32(0xcae65838); S31 = SPH_C32(0x437f203f);
-    S32 = SPH_C32(0x25ea78e7); S33 = SPH_C32(0x951fddd6); S34 = SPH_C32(0xda6ed11d); S35 = SPH_C32(0xe13e3567);
-
-    FUGUE512_3((hash.h4[0x0]), (hash.h4[0x1]), (hash.h4[0x2]));
-    FUGUE512_3((hash.h4[0x3]), (hash.h4[0x4]), (hash.h4[0x5]));
-    FUGUE512_3((hash.h4[0x6]), (hash.h4[0x7]), (hash.h4[0x8]));
-    FUGUE512_3((hash.h4[0x9]), (hash.h4[0xA]), (hash.h4[0xB]));
-    FUGUE512_3((hash.h4[0xC]), (hash.h4[0xD]), (hash.h4[0xE]));
-    FUGUE512_3((hash.h4[0xF]), as_uint2(fc_bit_count).y, as_uint2(fc_bit_count).x);
-
-    // apply round shift if necessary
-    int i;
-
-    for (i = 0; i < 32; i ++) {
-      ROR3;
-      CMIX36(S00, S01, S02, S04, S05, S06, S18, S19, S20);
-      SMIX(S00, S01, S02, S03);
-    }
-    for (i = 0; i < 13; i ++) {
-      S04 ^= S00;
-      S09 ^= S00;
-      S18 ^= S00;
-      S27 ^= S00;
-      ROR9;
-      SMIX(S00, S01, S02, S03);
-      S04 ^= S00;
-      S10 ^= S00;
-      S18 ^= S00;
-      S27 ^= S00;
-      ROR9;
-      SMIX(S00, S01, S02, S03);
-      S04 ^= S00;
-      S10 ^= S00;
-      S19 ^= S00;
-      S27 ^= S00;
-      ROR9;
-      SMIX(S00, S01, S02, S03);
-      S04 ^= S00;
-      S10 ^= S00;
-      S19 ^= S00;
-      S28 ^= S00;
-      ROR8;
-      SMIX(S00, S01, S02, S03);
-    }
-    S04 ^= S00;
-    S09 ^= S00;
-    S18 ^= S00;
-    S27 ^= S00;
-
-    hash.h4[0] = SWAP4(S01);
-    hash.h4[1] = SWAP4(S02);
-    hash.h4[2] = SWAP4(S03);
-    hash.h4[3] = SWAP4(S04);
-    hash.h4[4] = SWAP4(S09);
-    hash.h4[5] = SWAP4(S10);
-    hash.h4[6] = SWAP4(S11);
-    hash.h4[7] = SWAP4(S12);
-    hash.h4[8] = SWAP4(S18);
-    hash.h4[9] = SWAP4(S19);
-    hash.h4[10] = SWAP4(S20);
-    hash.h4[11] = SWAP4(S21);
-    hash.h4[12] = SWAP4(S27);
-    hash.h4[13] = SWAP4(S28);
-    hash.h4[14] = SWAP4(S29);
-    hash.h4[15] = SWAP4(S30);
-  }
-
-  bool result = (hash.h8[3] <= target);
-  if (result)
-    output[output[0xFF]++] = SWAP4(gid);
 }
 
-#endif // MARUCOIN_CL
+#endif // DARKCOIN_CL

@@ -8,8 +8,11 @@
 * [Globals and the Default Profile](#globals-and-the-default-profile)
 * [Working with Profiles and Pool Specific Settings](#working-with-profiles-and-pool-specific-settings)
 * [Include and Includes](#include-and-includes)
+* [Events](#events)
 * [CLI Only options](#cli-only-options)
 * [Config-file and CLI options](#config-file-and-cli-options)
+* [Event options](#event-options)
+* [Event Types](#event-types)
 
 ---
 
@@ -233,10 +236,41 @@ There is no limit as to how includes can be used as long as they follow proper j
 
 ---
 
+## Events
+
+Users can now execute commands or perform certain tasks when pre-defined events occur while mining. 
+
+For example, one might want their miner to email them via a script when the miner goes idle and reboot the computer when a GPU goes dead. This gives users a little more flexibility controlling their mining uptime without necessarily resorting to external watchdog programs that, in some cases, can be troublesome.
+
+Here is a configuration example of the above scenario:
+```
+...
+"events":[
+  {
+    "on":"idle",
+    "runcmd":"/bin/mailscript \"Miner Idle\" \"Hey! My miner went idle!\""
+  },
+  {
+    "on":"gpu_dead",
+    "reboot":"yes"
+  }
+],
+...
+```
+
+For more details on configuration options, see [Event Options](#event-options) below.
+
+[Top](#configuration-and-command-line-options)
+
+---
+
 ## CLI Only options
 
 * [config](#config) `--config` or `-c`
 * [default-config](#default-config) `--default-config`
+* [remote-config-retry](#remote-config-retry) `--remote-config-retry`
+* [remote-config-wait](#remote-config-wait) `--remote-config-wait`
+* [remote-config-usecache](#remote-config-usecache) `--remote-config-usecache`
 * [help](#help) `--help` or `-h`
 * [ndevs](#ndevs) `-ndevs` or `-n`
 * [version](#version) `--version` or `-V`
@@ -279,6 +313,60 @@ Specifies the name of the default configuration file to be loaded at start up an
 
 ```
 # ./sgminer --default_config defaultconfig.conf
+```
+
+[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
+
+### remote-config-retry
+
+Specifies the number of time to retry downloading a remote configuration file.
+
+*Syntax:* `--remote-config-retry <value>`
+
+*Argument:* `number` Number of retries
+
+*Default:* `3`
+
+*Example:*
+
+```
+# ./sgminer --remote-config-retry 4 http://myserver.com/configs/defaultconfig.conf
+```
+
+[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
+
+### remote-config-wait
+
+Specifies the number of seconds to wait between retries when downloading a remote configuration file fails.
+
+*Syntax:* `--remote-config-wait <value>`
+
+*Argument:* `number` Number of seconds
+
+*Default:* `10`
+
+*Example:*
+
+```
+# ./sgminer --remote-config-retry 4 --remote-config-wait 15 http://myserver.com/configs/defaultconfig.conf
+```
+
+[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
+
+### remote-config-usecache
+
+Tells sgminer to use the last successfully downloaded copy of the remote configuration file if all attempts to download fails.
+
+*Syntax:* `--remote-config-usecache`
+
+*Argument:* `None`
+
+*Default:* `False`
+
+*Example:*
+
+```
+# ./sgminer --remote-config-retry 4 --remote-config-usecache http://myserver.com/configs/defaultconfig.conf
 ```
 
 [Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
@@ -370,8 +458,11 @@ sgminer 4.2.1-116-g2e8b-dirty
   * [algorithm](#algorithm)
   * [lookup-gap](#lookup-gap)
   * [nfactor](#nfactor)
+  * [blake-compact](#blake-compact)
   * [hamsi-expand-big](#hamsi-expand-big)
   * [hamsi-short](#hamsi-short)
+  * [keccak-unroll](#keccak-unroll)
+  * [luffa-parallel](#luffa-parallel)
   * [shaders](#shaders)
   * [thread-concurrency](#thread-concurrency)
   * [worksize](#worksize)
@@ -749,9 +840,27 @@ Overrides the default scrypt parameter N, specified as the factor of 2 (`N = 2^n
 
 [Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Algorithm Options](#algorithm-options)
 
+### blake-compact
+
+Sets SPH\_COMPACT\_BLAKE64 for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+
+*Available*: Global
+
+*Algorithms*: `X11` `X13` `X14` `X15`
+
+*Config File Syntax:* `"blake-compact":true`
+
+*Command Line Syntax:* `--blake-compact`
+
+*Argument:* None
+
+*Default:* `false`
+
+[Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Algorithm Options](#algorithm-options)
+
 ### hamsi-expand-big
 
-Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_HAMSI\_EXPAND\_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -769,7 +878,7 @@ Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are
 
 ### hamsi-short
 
-Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_HAMSI\_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -778,6 +887,42 @@ Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashr
 *Config File Syntax:* `"hamsi-short":true`
 
 *Command Line Syntax:* `--hamsi-short`
+
+*Argument:* None
+
+*Default:* `false`
+
+[Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Algorithm Options](#algorithm-options)
+
+### keccak-unroll
+
+Sets SPH\_KECCAK\_UNROLL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+
+*Available*: Global
+
+*Algorithms*: `X11` `X13` `X14` `X15`
+
+*Config File Syntax:* `"keccak-unroll":"<value>"`
+
+*Command Line Syntax:* `--keccak-unroll <value>`
+
+*Argument:* `number`
+
+*Default:* `0`
+
+[Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Algorithm Options](#algorithm-options)
+
+### luffa-parallel
+
+Sets SPH\_LUFFA\_PARALLEL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+
+*Available*: Global
+
+*Algorithms*: `X11` `X13` `X14` `X15`
+
+*Config File Syntax:* `"luffa-parallel":true`
+
+*Command Line Syntax:* `--luffa-parallel`
 
 *Argument:* None
 
@@ -2389,3 +2534,120 @@ Displays extra work time debug information.
 *Default:* `false`
 
 [Top](#configuration-and-command-line-options) :: [Config-file and CLI options](#config-file-and-cli-options) :: [Miscellaneous Options](#miscellaneous-options)
+
+---
+
+## Event options
+
+* [on](#on)
+* [runcmd](#runcmd)
+* [reboot](#reboot)
+* [reboot-delay](#reboot-delay)
+* [quit](#quit)
+* [quit-message](#quit-message)
+
+### on
+
+Specify which event type to respond on. See below for a list of supported [event types](#event-types)
+
+*Available*: Events
+
+*Config File Syntax:* `"on":"<value>"`
+
+*Command Line Syntax:* `--event-on <value>`
+
+*Argument:* `string` Name of the event type
+
+*Default:* None
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+### runcmd
+
+Specify a command to run when the event occurs. Please remember to properly escape quotes (") with backslashes (\\) if you need to specify multi-word parameters enclosed in quotes (") for your commands: `\"`
+
+*Available*: Events
+
+*Config File Syntax:* `"runcmd":"<value>"`
+
+*Command Line Syntax:* `--event-runcmd <value>`
+
+*Argument:* `string` Command to execute on event
+
+*Default:* None
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+### reboot
+
+Reboot when event occurs.
+
+*Available*: Events
+
+*Config File Syntax:* `"reboot":"<value>"`
+
+*Command Line Syntax:* `--event-reboot <value>`
+
+*Argument:* `string` Yes: `"true"` `"yes"` `"1"` or No: `"false"` `"no"` `"0"`
+
+*Default:* `false`
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+### reboot-delay
+
+Wait a number of seconds before rebooting when event occurs. This is useful if you also want to fire off a script via `runcmd` prior to rebooting, giving it extra seconds to finish.
+
+*Available*: Events
+
+*Config File Syntax:* `"reboot-delay":"<value>"`
+
+*Command Line Syntax:* `--event-reboot-delay <value>`
+
+*Argument:* `number` Seconds to wait before reboot
+
+*Default:* `0`
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+### quit
+
+Exit sgminer when event occurs.
+
+*Available*: Events
+
+*Config File Syntax:* `"quit":"<value>"`
+
+*Command Line Syntax:* `--event-quit <value>`
+
+*Argument:* `string` Yes: `"true"` `"yes"` `"1"` or No: `"false"` `"no"` `"0"`
+
+*Default:* `false`
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+### quit-message
+
+Message to display on sgminer exit when event occurs.
+
+*Available*: Events
+
+*Config File Syntax:* `"quit-message":"<value>"`
+
+*Command Line Syntax:* `--event-quit-message "<value>"`
+
+*Argument:* `string` Message
+
+*Default:* `event_type`
+
+[Top](#configuration-and-command-line-options) :: [Event options](#event-options)
+
+---
+
+## Event Types
+
+* `idle` Occurs when a GPU goes idle for not performing any work or when no work has been received in 10 minutes.
+* `gpu_sick` Occurs when a GPU fails to respond for 2 minutes
+* `gpu_dead` Occurs when a GPU fails to respond for 10 minutes
+
+[Top](#configuration-and-command-line-options)
