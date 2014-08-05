@@ -421,14 +421,14 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
   BMW_H[14] = SPH_ROTL64(BMW_H[2],15) + ( XH64 ^ q[30] ^ mv[14]) + (SHR(XL64,7) ^ q[21] ^ q[14]);
   BMW_H[15] = SPH_ROTL64(BMW_H[3],16) + ( XH64 ^ q[31] ^ mv[15]) + (SHR(XL64,2) ^ q[22] ^ q[15]);
 
-  hash->h8[0] = SWAP8(BMW_H[8]);
-  hash->h8[1] = SWAP8(BMW_H[9]);
-  hash->h8[2] = SWAP8(BMW_H[10]);
-  hash->h8[3] = SWAP8(BMW_H[11]);
-  hash->h8[4] = SWAP8(BMW_H[12]);
-  hash->h8[5] = SWAP8(BMW_H[13]);
-  hash->h8[6] = SWAP8(BMW_H[14]);
-  hash->h8[7] = SWAP8(BMW_H[15]);
+  hash.h8[0] = SWAP8(BMW_H[8]);
+  hash.h8[1] = SWAP8(BMW_H[9]);
+  hash.h8[2] = SWAP8(BMW_H[10]);
+  hash.h8[3] = SWAP8(BMW_H[11]);
+  hash.h8[4] = SWAP8(BMW_H[12]);
+  hash.h8[5] = SWAP8(BMW_H[13]);
+  hash.h8[6] = SWAP8(BMW_H[14]);
+  hash.h8[7] = SWAP8(BMW_H[15]);
   }
   // groestl
   {
@@ -476,14 +476,14 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 #endif
 
   sph_u64 g[16], m[16];
-  m[0] = DEC64E(hash->h8[0]);
-  m[1] = DEC64E(hash->h8[1]);
-  m[2] = DEC64E(hash->h8[2]);
-  m[3] = DEC64E(hash->h8[3]);
-  m[4] = DEC64E(hash->h8[4]);
-  m[5] = DEC64E(hash->h8[5]);
-  m[6] = DEC64E(hash->h8[6]);
-  m[7] = DEC64E(hash->h8[7]);
+  m[0] = DEC64E(hash.h8[0]);
+  m[1] = DEC64E(hash.h8[1]);
+  m[2] = DEC64E(hash.h8[2]);
+  m[3] = DEC64E(hash.h8[3]);
+  m[4] = DEC64E(hash.h8[4]);
+  m[5] = DEC64E(hash.h8[5]);
+  m[6] = DEC64E(hash.h8[6]);
+  m[7] = DEC64E(hash.h8[7]);
 
 //#pragma unroll 16
   for (unsigned int u = 0; u < 16; u ++)
@@ -515,7 +515,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 
 //#pragma unroll 8
   for (unsigned int u = 0; u < 8; u ++)
-    hash->h8[u] = DEC64E(H[u + 8]);
+    hash.h8[u] = DEC64E(H[u + 8]);
     barrier(CLK_GLOBAL_MEM_FENCE);
   }
 

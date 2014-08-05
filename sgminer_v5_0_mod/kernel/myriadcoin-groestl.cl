@@ -186,14 +186,14 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 #endif
 
   sph_u64 g[16], m[16];
-  m[0] = DEC64E(hash->h8[0]);
-  m[1] = DEC64E(hash->h8[1]);
-  m[2] = DEC64E(hash->h8[2]);
-  m[3] = DEC64E(hash->h8[3]);
-  m[4] = DEC64E(hash->h8[4]);
-  m[5] = DEC64E(hash->h8[5]);
-  m[6] = DEC64E(hash->h8[6]);
-  m[7] = DEC64E(hash->h8[7]);
+  m[0] = DEC64E(hash.h8[0]);
+  m[1] = DEC64E(hash.h8[1]);
+  m[2] = DEC64E(hash.h8[2]);
+  m[3] = DEC64E(hash.h8[3]);
+  m[4] = DEC64E(hash.h8[4]);
+  m[5] = DEC64E(hash.h8[5]);
+  m[6] = DEC64E(hash.h8[6]);
+  m[7] = DEC64E(hash.h8[7]);
 
 //#pragma unroll 16
   for (unsigned int u = 0; u < 16; u ++)
@@ -225,7 +225,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 
 //#pragma unroll 8
   for (unsigned int u = 0; u < 8; u ++)
-    hash->h8[u] = DEC64E(H[u + 8]);
+    hash.h8[u] = DEC64E(H[u + 8]);
     barrier(CLK_GLOBAL_MEM_FENCE);
 
   uint temp1;

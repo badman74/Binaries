@@ -68,10 +68,7 @@ typedef int sph_s32;
 #define SPH_JH_64 1
 #define SPH_KECCAK_64 1
 #define SPH_KECCAK_NOCOPY 0
-
-#ifndef SPH_COMPACT_BLAKE_64
-  #define SPH_COMPACT_BLAKE_64 0
-#endif
+#define SPH_COMPACT_BLAKE_64 0
 #ifndef SPH_KECCAK_UNROLL
   #define SPH_KECCAK_UNROLL   0
 #endif
