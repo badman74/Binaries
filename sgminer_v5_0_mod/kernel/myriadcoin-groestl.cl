@@ -186,26 +186,29 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 #endif
 
   sph_u64 g[16], m[16];
-  m[0] = DEC64E(hash.h8[0]);
-  m[1] = DEC64E(hash.h8[1]);
-  m[2] = DEC64E(hash.h8[2]);
-  m[3] = DEC64E(hash.h8[3]);
-  m[4] = DEC64E(hash.h8[4]);
-  m[5] = DEC64E(hash.h8[5]);
-  m[6] = DEC64E(hash.h8[6]);
-  m[7] = DEC64E(hash.h8[7]);
+  m[0] = DEC64E(block + 0 * 8);
+  m[1] = DEC64E(block + 1 * 8);
+  m[2] = DEC64E(block + 2 * 8);
+  m[3] = DEC64E(block + 3 * 8);
+  m[4] = DEC64E(block + 4 * 8);
+  m[5] = DEC64E(block + 5 * 8);
+  m[6] = DEC64E(block + 6 * 8);
+  m[7] = DEC64E(block + 7 * 8);
+  m[8] = DEC64E(block + 8 * 8);
+  m[9] = DEC64E(block + 9 * 8);
+  m[9] &= 0x00000000FFFFFFFF;
+  m[9] |= ((sph_u64) gid << 32);
+  m[10] = 0x80;
+  m[11] = 0;
+  m[12] = 0;
+  m[13] = 0;
+  m[14] = 0;
+  m[15] = 0x100000000000000;
 
 //#pragma unroll 16
   for (unsigned int u = 0; u < 16; u ++)
     g[u] = m[u] ^ H[u];
-  m[8] = 0x80; g[8] = m[8] ^ H[8];
-  m[9] = 0; g[9] = m[9] ^ H[9];
-  m[10] = 0; g[10] = m[10] ^ H[10];
-  m[11] = 0; g[11] = m[11] ^ H[11];
-  m[12] = 0; g[12] = m[12] ^ H[12];
-  m[13] = 0; g[13] = m[13] ^ H[13];
-  m[14] = 0; g[14] = m[14] ^ H[14];
-  m[15] = 0x100000000000000; g[15] = m[15] ^ H[15];
+
   PERM_BIG_P(g);
   PERM_BIG_Q(m);
 
@@ -225,7 +228,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 
 //#pragma unroll 8
   for (unsigned int u = 0; u < 8; u ++)
-    hash.h8[u] = DEC64E(H[u + 8]);
+    hash.h8[u] = ENC64E(H[u + 8]);
     barrier(CLK_GLOBAL_MEM_FENCE);
 
   uint temp1;
