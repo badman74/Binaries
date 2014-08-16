@@ -383,7 +383,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
   hash.h8[5] = SWAP8(BMW_H[13]);
   hash.h8[6] = SWAP8(BMW_H[14]);
   hash.h8[7] = SWAP8(BMW_H[15]);
-
+  }
 
   // blake
   {
@@ -434,37 +434,6 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
   bool dec = ((hash.h1[7] & 0x8) != 0);
   {
     // groestl
-#if !SPH_SMALL_FOOTPRINT_GROESTL
-  __local sph_u64 T0_C[256], T1_C[256], T2_C[256], T3_C[256];
-  __local sph_u64 T4_C[256], T5_C[256], T6_C[256], T7_C[256];
-#else
-  __local sph_u64 T0_C[256], T4_C[256];
-#endif
-  int init = get_local_id(0);
-  int step = get_local_size(0);
-
-  for (int i = init; i < 256; i += step)
-  {
-    T0_C[i] = T0[i];
-    T4_C[i] = T4[i];
-#if !SPH_SMALL_FOOTPRINT_GROESTL
-    T1_C[i] = T1[i];
-    T2_C[i] = T2[i];
-    T3_C[i] = T3[i];
-    T5_C[i] = T5[i];
-    T6_C[i] = T6[i];
-    T7_C[i] = T7[i];
-#endif
-  }
-  barrier(CLK_LOCAL_MEM_FENCE);    // groestl
-#define T0 T0_C
-#define T1 T1_C
-#define T2 T2_C
-#define T3 T3_C
-#define T4 T4_C
-#define T5 T5_C
-#define T6 T6_C
-#define T7 T7_C
     sph_u64 H[16];
     for (unsigned int u = 0; u < 15; u ++)
       H[u] = 0;
@@ -584,6 +553,7 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
   {
     sph_u64 h0h = C64e(0x6fd14b963e00aa17), h0l = C64e(0x636a2e057a15d543), h1h = C64e(0x8a225e8d0c97ef0b), h1l = C64e(0xe9341259f2b3c361), h2h = C64e(0x891da0c1536f801e), h2l = C64e(0x2aa9056bea2b6d80), h3h = C64e(0x588eccdb2075baa6), h3l = C64e(0xa90f3a76baf83bf7);
     sph_u64 h4h = C64e(0x0169e60541e34a69), h4l = C64e(0x46b58a8e2e6fe65a), h5h = C64e(0x1047a7d0c1843c24), h5l = C64e(0x3b6e71b12d5ac199), h6h = C64e(0xcf57f6ec9db1f856), h6l = C64e(0xa706887c5716b156), h7h = C64e(0xe3c2fcdfe68517fb), h7l = C64e(0x545a4678cc8cdd4b);
+    sph_u64 tmp;
 
     for(int i = 0; i < 2; i++)
     {
@@ -676,6 +646,9 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
     sph_u64 BMW_H[16];
     for(unsigned u = 0; u < 16; u++)
       BMW_H[u] = BMW_IV512[u];
+
+    sph_u64 mv[16],q[32];
+      sph_u64 tmp;
 
     mv[ 0] = SWAP8(hash.h8[0]);
     mv[ 1] = SWAP8(hash.h8[1]);
