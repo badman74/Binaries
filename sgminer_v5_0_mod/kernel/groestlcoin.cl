@@ -84,14 +84,6 @@ typedef long sph_s64;
   #define DEC64E(x) (*(const __global sph_u64 *) (x));
 #endif
 
-#define SHL(x, n) ((x) << (n))
-#define SHR(x, n) ((x) >> (n))
-
-#define CONST_EXP2  q[i+0] + SPH_ROTL64(q[i+1], 5)  + q[i+2] + SPH_ROTL64(q[i+3], 11) + \
-                    q[i+4] + SPH_ROTL64(q[i+5], 27) + q[i+6] + SPH_ROTL64(q[i+7], 32) + \
-                    q[i+8] + SPH_ROTL64(q[i+9], 37) + q[i+10] + SPH_ROTL64(q[i+11], 43) + \
-                    q[i+12] + SPH_ROTL64(q[i+13], 53) + (SHR(q[i+14],1) ^ q[i+14]) + (SHR(q[i+15],2) ^ q[i+15])
-
 #define ROL32(x, n)  rotate(x, (uint) n)
 #define SHR(x, n)    ((x) >> n)
 #define SWAP32(a)    (as_uint(as_uchar4(a).wzyx))
@@ -179,6 +171,8 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 #define T7 T7_C
 
 
+  // groestl
+  {
   sph_u64 H[16];
 //#pragma unroll 15
   for (unsigned int u = 0; u < 15; u ++)
@@ -190,21 +184,23 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 #endif
 
   sph_u64 g[16], m[16];
-  m[0] = DEC64E(hash.h8[0]);
-  m[1] = DEC64E(hash.h8[1]);
-  m[2] = DEC64E(hash.h8[2]);
-  m[3] = DEC64E(hash.h8[3]);
-  m[4] = DEC64E(hash.h8[4]);
-  m[5] = DEC64E(hash.h8[5]);
-  m[6] = DEC64E(hash.h8[6]);
-  m[7] = DEC64E(hash.h8[7]);
+  m[0] = DEC64E(block + 0 * 8);
+  m[1] = DEC64E(block + 1 * 8);
+  m[2] = DEC64E(block + 2 * 8);
+  m[3] = DEC64E(block + 3 * 8);
+  m[4] = DEC64E(block + 4 * 8);
+  m[5] = DEC64E(block + 5 * 8);
+  m[6] = DEC64E(block + 6 * 8);
+  m[7] = DEC64E(block + 7 * 8);
+  m[8] = DEC64E(block + 8 * 8);
+  m[9] = DEC64E(block + 9 * 8);
+  m[9] &= 0x00000000FFFFFFFF;
+  m[9] |= ((sph_u64) gid << 32);
 
 //#pragma unroll 16
   for (unsigned int u = 0; u < 16; u ++)
     g[u] = m[u] ^ H[u];
-  m[8] = 0x80; g[8] = m[8] ^ H[8];
-  m[9] = 0; g[9] = m[9] ^ H[9];
-  m[10] = 0; g[10] = m[10] ^ H[10];
+  m[10] = 0x80; g[10] = m[10] ^ H[10];
   m[11] = 0; g[11] = m[11] ^ H[11];
   m[12] = 0; g[12] = m[12] ^ H[12];
   m[13] = 0; g[13] = m[13] ^ H[13];
@@ -229,8 +225,58 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 
 //#pragma unroll 8
   for (unsigned int u = 0; u < 8; u ++)
-    hash.h8[u] = DEC64E(H[u + 8]);
-    barrier(CLK_GLOBAL_MEM_FENCE);
+    hash.h8[u] = ENC64E(H[u + 8]);
+
+//#pragma unroll 15
+	for (unsigned int u = 0; u < 15; u ++)
+    H[u] = 0;
+  #if USE_LE
+    H[15] = ((sph_u64)(512 & 0xFF) << 56) | ((sph_u64)(512 & 0xFF00) << 40);
+  #else
+    H[15] = (sph_u64)512;
+  #endif
+
+  m[0] = hash.h8[0];
+  m[1] = hash.h8[1];
+  m[2] = hash.h8[2];
+  m[3] = hash.h8[3];
+  m[4] = hash.h8[4];
+  m[5] = hash.h8[5];
+  m[6] = hash.h8[6];
+  m[7] = hash.h8[7];
+
+//#pragma unroll 16
+  for (unsigned int u = 0; u < 16; u ++)
+    g[u] = m[u] ^ H[u];
+  m[8] = 0x80; g[8] = m[8] ^ H[8];
+  m[9] = 0; g[9] = m[9] ^ H[9];
+  m[10] = 0; g[10] = m[10] ^ H[10];
+  m[11] = 0; g[11] = m[11] ^ H[11];
+  m[12] = 0; g[12] = m[12] ^ H[12];
+  m[13] = 0; g[13] = m[13] ^ H[13];
+  m[14] = 0; g[14] = m[14] ^ H[14];
+  m[15] = 0x100000000000000; g[15] = m[15] ^ H[15];
+  PERM_BIG_P(g);
+  PERM_BIG_Q(m);
+
+//#pragma unroll 16
+  for (unsigned int u = 0; u < 16; u ++)
+    H[u] ^= g[u] ^ m[u];
+
+ //#pragma unroll 16
+  for (unsigned int u = 0; u < 16; u ++)
+    xH[u] = H[u];
+  PERM_BIG_P(xH);
+
+ //#pragma unroll 16
+  for (unsigned int u = 0; u < 16; u ++)
+    H[u] ^= xH[u];
+
+//#pragma unroll 8
+    for (unsigned int u = 0; u < 8; u ++)
+    hash.h8[u] = H[u + 8];
+
+  barrier(CLK_GLOBAL_MEM_FENCE);
   }
 
   bool result = (hash.h8[3] <= target);
