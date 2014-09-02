@@ -842,7 +842,7 @@ Overrides the default scrypt parameter N, specified as the factor of 2 (`N = 2^n
 
 ### blake-compact
 
-Sets SPH\_COMPACT\_BLAKE64 for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH_COMPACT_BLAKE64 for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -860,7 +860,7 @@ Sets SPH\_COMPACT\_BLAKE64 for Xn derived algorithms. Changing this may improve 
 
 ### hamsi-expand-big
 
-Sets SPH\_HAMSI\_EXPAND\_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -878,7 +878,7 @@ Sets SPH\_HAMSI\_EXPAND\_BIG for X13 derived algorithms. Values `"4"` and `"1"` 
 
 ### hamsi-short
 
-Sets SPH\_HAMSI\_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -896,7 +896,7 @@ Sets SPH\_HAMSI\_SHORT for X13 derived algorithms. Changing this may improve has
 
 ### keccak-unroll
 
-Sets SPH\_KECCAK\_UNROLL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH_KECCAK_UNROLL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -914,7 +914,7 @@ Sets SPH\_KECCAK\_UNROLL for Xn derived algorithms. Changing this may improve ha
 
 ### luffa-parallel
 
-Sets SPH\_LUFFA\_PARALLEL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH_LUFFA_PARALLEL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 

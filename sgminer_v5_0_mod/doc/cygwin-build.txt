@@ -58,7 +58,7 @@ files.
 You've probably already done this, but this can be done with git or with a zip
 file. With git:
     $ cd
-    $ git clone git@github.com:veox/sgminer.git
+    $ git clone git://github.com/sgminer-dev/sgminer.git
 
 With a zip file:
     $ cd
