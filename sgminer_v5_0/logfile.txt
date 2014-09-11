@@ -1,0 +1,697 @@
+[2014-09-10 20:25:10] Log date is now 2014-09-10
+[2014-09-10 20:25:10] Default Devices = all
+[2014-09-10 20:25:10] set_devices(all)
+[2014-09-10 20:25:10] Loading settings from profile "whirlcoin" for pool 14
+[2014-09-10 20:25:10] Pool 14 Algorithm set to "ckolivas"
+[2014-09-10 20:25:10] Pool 14 devices set to "all"
+[2014-09-10 20:25:10] Pool 14 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 14 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 14 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 14 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 14 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 14 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 14 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 14 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 14 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 14 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 14 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 14 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 14 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from default_profile for pool 13
+[2014-09-10 20:25:10] Pool 13 Algorithm set to "sifcoin"
+[2014-09-10 20:25:10] Pool 13 devices set to "all"
+[2014-09-10 20:25:10] Pool 13 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 13 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 13 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 13 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 13 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 13 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 13 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 13 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 13 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 13 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 13 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 13 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 13 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "myriadcoin-groestl" for pool 12
+[2014-09-10 20:25:10] Profile load failed for pool 12: profile myriadcoin-groestl not found. Using default profile.
+[2014-09-10 20:25:10] Pool 12 Algorithm set to "ckolivas"
+[2014-09-10 20:25:10] Pool 12 devices set to "all"
+[2014-09-10 20:25:10] Pool 12 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 12 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 12 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 12 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 12 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 12 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 12 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 12 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 12 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 12 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 12 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 12 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 12 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from default_profile for pool 11
+[2014-09-10 20:25:10] Pool 11 Algorithm set to "groestlcoin"
+[2014-09-10 20:25:10] Pool 11 devices set to "all"
+[2014-09-10 20:25:10] Pool 11 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 11 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 11 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 11 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 11 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 11 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 11 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 11 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 11 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 11 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 11 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 11 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 11 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from default_profile for pool 10
+[2014-09-10 20:25:10] Pool 10 Algorithm set to "animecoin"
+[2014-09-10 20:25:10] Pool 10 devices set to "all"
+[2014-09-10 20:25:10] Pool 10 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 10 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 10 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 10 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 10 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 10 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 10 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 10 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 10 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 10 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 10 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 10 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 10 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "quark" for pool 9
+[2014-09-10 20:25:10] Pool 9 Algorithm set to "quarkcoin"
+[2014-09-10 20:25:10] Pool 9 devices set to "all"
+[2014-09-10 20:25:10] Pool 9 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 9 Intensity set to "14"
+[2014-09-10 20:25:10] Pool 9 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 9 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 9 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 9 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 9 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 9 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 9 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 9 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 9 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 9 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 9 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "quark" for pool 8
+[2014-09-10 20:25:10] Pool 8 Algorithm set to "quarkcoin"
+[2014-09-10 20:25:10] Pool 8 devices set to "all"
+[2014-09-10 20:25:10] Pool 8 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 8 Intensity set to "14"
+[2014-09-10 20:25:10] Pool 8 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 8 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 8 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 8 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 8 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 8 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 8 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 8 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 8 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 8 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 8 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "qubit" for pool 7
+[2014-09-10 20:25:10] Pool 7 Algorithm set to "qubitcoin"
+[2014-09-10 20:25:10] Pool 7 devices set to "all"
+[2014-09-10 20:25:10] Pool 7 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 7 Intensity set to "14"
+[2014-09-10 20:25:10] Pool 7 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 7 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 7 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 7 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 7 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 7 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 7 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 7 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 7 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 7 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 7 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "nscrypt" for pool 6
+[2014-09-10 20:25:10] Pool 6 Algorithm set to "alexkarnew"
+[2014-09-10 20:25:10] Pool 6 devices set to "all"
+[2014-09-10 20:25:10] Pool 6 lookup gap set to "2"
+[2014-09-10 20:25:10] Pool 6 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 6 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 6 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 6 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 6 GPU Clock set to "1000,1000"
+[2014-09-10 20:25:10] Pool 6 GPU Memory clock set to "1250,1250"
+[2014-09-10 20:25:10] Pool 6 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 6 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 6 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 6 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 6 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 6 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "scrypt" for pool 5
+[2014-09-10 20:25:10] Pool 5 Algorithm set to "zuikkis"
+[2014-09-10 20:25:10] Pool 5 devices set to "all"
+[2014-09-10 20:25:10] Pool 5 lookup gap set to "2"
+[2014-09-10 20:25:10] Pool 5 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 5 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 5 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 5 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 5 GPU Clock set to "1000,1000"
+[2014-09-10 20:25:10] Pool 5 GPU Memory clock set to "1250,1250"
+[2014-09-10 20:25:10] Pool 5 GPU Threads set to "1"
+[2014-09-10 20:25:10] Pool 5 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 5 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 5 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 5 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 5 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "keccak" for pool 4
+[2014-09-10 20:25:10] Pool 4 Algorithm set to "maxcoin"
+[2014-09-10 20:25:10] Pool 4 devices set to "all"
+[2014-09-10 20:25:10] Pool 4 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 4 Intensity set to "12"
+[2014-09-10 20:25:10] Pool 4 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 4 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 4 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 4 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 4 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 4 GPU Threads set to "4"
+[2014-09-10 20:25:10] Pool 4 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 4 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 4 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 4 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 4 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "NIST5" for pool 3
+[2014-09-10 20:25:10] Pool 3 Algorithm set to "talkcoin-mod"
+[2014-09-10 20:25:10] Pool 3 devices set to "all"
+[2014-09-10 20:25:10] Pool 3 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 3 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 3 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 3 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 3 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 3 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 3 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 3 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 3 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 3 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 3 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 3 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 3 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "x15" for pool 2
+[2014-09-10 20:25:10] Pool 2 Algorithm set to "bitblock"
+[2014-09-10 20:25:10] Pool 2 devices set to "all"
+[2014-09-10 20:25:10] Pool 2 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 2 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 2 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 2 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 2 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 2 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 2 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 2 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 2 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 2 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 2 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 2 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 2 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "x13" for pool 1
+[2014-09-10 20:25:10] Pool 1 Algorithm set to "marucoin-mod"
+[2014-09-10 20:25:10] Pool 1 devices set to "all"
+[2014-09-10 20:25:10] Pool 1 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 1 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 1 XIntensity set to "(null)"
+[2014-09-10 20:25:10] Pool 1 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 1 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 1 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 1 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 1 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 1 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 1 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 1 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 1 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 1 Worksize set to "64"
+[2014-09-10 20:25:10] Loading settings from profile "x11" for pool 0
+[2014-09-10 20:25:10] Pool 0 Algorithm set to "darkcoin-mod"
+[2014-09-10 20:25:10] Pool 0 devices set to "all"
+[2014-09-10 20:25:10] Pool 0 lookup gap set to "(null)"
+[2014-09-10 20:25:10] Pool 0 Intensity set to "16"
+[2014-09-10 20:25:10] Pool 0 XIntensity set to "64"
+[2014-09-10 20:25:10] Pool 0 Raw Intensity set to "(null)"
+[2014-09-10 20:25:10] Pool 0 Thread Concurrency set to "(null)"
+[2014-09-10 20:25:10] Pool 0 GPU Clock set to "1040,1040"
+[2014-09-10 20:25:10] Pool 0 GPU Memory clock set to "1375,1375"
+[2014-09-10 20:25:10] Pool 0 GPU Threads set to "2"
+[2014-09-10 20:25:10] Pool 0 GPU Fan set to "50-100"
+[2014-09-10 20:25:10] Pool 0 GPU Powertune set to "0"
+[2014-09-10 20:25:10] Pool 0 GPU Vddc set to "(null)"
+[2014-09-10 20:25:10] Pool 0 Shaders set to "(null)"
+[2014-09-10 20:25:10] Pool 0 Worksize set to "64"
+[2014-09-10 20:25:10] Started sgminer 5.0.0
+[2014-09-10 20:25:10] * using Jansson 2.6
+[2014-09-10 20:25:10] Loaded configuration file nicehash_profiles_test.conf
+[2014-09-10 20:25:11] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:11] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:11] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:11] Platform devices: 2
+[2014-09-10 20:25:11] 	0	Hawaii
+[2014-09-10 20:25:11] 	1	Hawaii
+[2014-09-10 20:25:11] Number of ADL devices: 2
+[2014-09-10 20:25:11] ATI ADL Overdrive5 API found.
+[2014-09-10 20:25:11] ATI ADL Overdrive6 API found.
+[2014-09-10 20:25:11] Found 12 logical ADL adapters
+[2014-09-10 20:25:11] ADL index 0, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] GPU 0 assigned: iAdapterIndex:0 iPresent:1 strUDID:PCI_VEN_1002&DEV_67B0&SUBSYS_0B001002&REV_00_4&1DD3FD56&0&0020A iBusNumber:2 iDeviceNumber:0 iFunctionNumber:0 iVendorID:1002 name:AMD Radeon R9 200 Series
+[2014-09-10 20:25:11] ADL index 1, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 2, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 3, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 4, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 5, id 296203456 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 6, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] GPU 1 assigned: iAdapterIndex:6 iPresent:1 strUDID:PCI_VEN_1002&DEV_67B0&SUBSYS_0B001002&REV_00_4&333EC764&0&0010A iBusNumber:1 iDeviceNumber:0 iFunctionNumber:0 iVendorID:1002 name:AMD Radeon R9 200 Series
+[2014-09-10 20:25:11] ADL index 7, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 8, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 9, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 10, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] ADL index 11, id 295825472 - BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] Mapping OpenCL device 0 to ADL device 0
+[2014-09-10 20:25:11] Mapping OpenCL device 1 to ADL device 1
+[2014-09-10 20:25:11] GPU 0 AMD Radeon R9 200 Series hardware monitoring enabled
+[2014-09-10 20:25:11] ADL GPU 0 is Adapter index 0 and maps to adapter id 296203456
+[2014-09-10 20:25:11] GPU 0 BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] Setting GPU 0 engine clock to 1040
+[2014-09-10 20:25:11] Setting GPU 0 memory clock to 1375
+[2014-09-10 20:25:11] Failed to ADL_Overdrive5_FanSpeed_Get for default value
+[2014-09-10 20:25:11] GPU 0 call to fanspeed get failed
+[2014-09-10 20:25:11] GPU 0 call to fanspeed get failed
+[2014-09-10 20:25:11] GPU 1 AMD Radeon R9 200 Series hardware monitoring enabled
+[2014-09-10 20:25:11] ADL GPU 1 is Adapter index 6 and maps to adapter id 295825472
+[2014-09-10 20:25:11] GPU 1 BIOS partno.: 113-C6710150-102, version: 015.039.000.007, date: 2013/10/03 15:00
+[2014-09-10 20:25:11] Setting GPU 1 engine clock to 1040
+[2014-09-10 20:25:11] Setting GPU 1 memory clock to 1375
+[2014-09-10 20:25:11] Failed to ADL_Overdrive5_FanSpeed_Get for default value
+[2014-09-10 20:25:11] GPU 1 call to fanspeed get failed
+[2014-09-10 20:25:11] GPU 1 call to fanspeed get failed
+[2014-09-10 20:25:11] Probing for an alive pool
+[2014-09-10 20:25:11] Testing nh x11 multi
+[2014-09-10 20:25:11] Testing nh x13 multi
+[2014-09-10 20:25:11] Testing NH x15 multi
+[2014-09-10 20:25:11] Testing nh keccak multi
+[2014-09-10 20:25:11] Testing nh scrypt multi
+[2014-09-10 20:25:11] Testing NH NIST5 multi
+[2014-09-10 20:25:11] Testing nh nscrypt multi
+[2014-09-10 20:25:11] Testing Qubit CPU Pool
+[2014-09-10 20:25:11] Testing QRK
+[2014-09-10 20:25:11] Testing dime
+[2014-09-10 20:25:11] Testing Animecoin test
+[2014-09-10 20:25:11] Testing Groestlcoin test
+[2014-09-10 20:25:11] Testing myriad-groestl test
+[2014-09-10 20:25:11] Testing Dwarfpool whirlcoin test
+[2014-09-10 20:25:11] Testing sifcoin test
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] myriad-groestl test stratum session id: deadbeefcafebabec702000000000000
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Succeeded delayed connect
+[2014-09-10 20:25:11] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] myriad-groestl test difficulty changed to 0.040
+[2014-09-10 20:25:12] Succeeded delayed connect
+[2014-09-10 20:25:12] Dwarfpool whirlcoin test difficulty changed to 0.001
+[2014-09-10 20:25:12] Cannot subscribe to mining.extranonce on Dwarfpool whirlcoin test
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Stratum authorisation success for Dwarfpool whirlcoin test
+[2014-09-10 20:25:12] Switching to Dwarfpool whirlcoin test - first alive pool
+[2014-09-10 20:25:12] Dwarfpool whirlcoin test alive
+[2014-09-10 20:25:12] Startup GPU initialization... Using settings from pool Dwarfpool whirlcoin test.
+[2014-09-10 20:25:12] Startup Pool No = 14
+[2014-09-10 20:25:12] set_devices(all)
+[2014-09-10 20:25:12] Set GPU 0 to ckolivas
+[2014-09-10 20:25:12] Set GPU 1 to ckolivas
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] Groestlcoin test difficulty changed to 0.062
+[2014-09-10 20:25:12] Stratum extranonce subscribe for NH x15 multi
+[2014-09-10 20:25:12] GPU 0 call to fanspeed get failed
+[2014-09-10 20:25:12] Stratum extranonce subscribe for nh scrypt multi
+[2014-09-10 20:25:12] Stratum extranonce subscribe for nh x13 multi
+[2014-09-10 20:25:12] Stratum extranonce subscribe for nh nscrypt multi
+[2014-09-10 20:25:12] Stratum extranonce subscribe for nh x11 multi
+[2014-09-10 20:25:12] Stratum extranonce subscribe for NH NIST5 multi
+[2014-09-10 20:25:12] sifcoin test difficulty changed to 0.333
+[2014-09-10 20:25:12] Cannot subscribe to mining.extranonce on sifcoin test
+[2014-09-10 20:25:12] GPU 1 call to fanspeed get failed
+[2014-09-10 20:25:12] Allocate new threads...
+[2014-09-10 20:25:12] Assign threads for device 0
+[2014-09-10 20:25:12] Thread 0 set pool = 14 (Dwarfpool whirlcoin test)
+[2014-09-10 20:25:12] Init GPU thread 0 GPU 0 virtual GPU 0
+[2014-09-10 20:25:12] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:12] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:12] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:12] Platform devices: 2
+[2014-09-10 20:25:12] 	0	Hawaii
+[2014-09-10 20:25:12] 	1	Hawaii
+[2014-09-10 20:25:12] List of devices:
+[2014-09-10 20:25:12] 	0	Hawaii
+[2014-09-10 20:25:12] Selected 0: Hawaii
+[2014-09-10 20:25:12] 	1	Hawaii
+[2014-09-10 20:25:12] Stratum authorisation success for Groestlcoin test
+[2014-09-10 20:25:12] Groestlcoin test alive, testing stability
+[2014-09-10 20:25:12] Groestlcoin test difficulty set to 0.062499
+[2014-09-10 20:25:12] Generated stratum merkle fd66b6e3f031ba5f382df763a9a3c6a7bac04e5a4238a3bdd6802917b0283b8d
+[2014-09-10 20:25:12] Generated stratum header 000000028c2abc32a359bccc0fd2bf21c6a9b8f926e90100db5cc9420e33260100000000fd66b6e3f031ba5f382df763a9a3c6a7bac04e5a4238a3bdd6802917b0283b8d5410fa4b1c16a3f000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:12] Work job_id 193673992130173286351686946144449562648 nonce2 0 ntime 5410fa4b
+[2014-09-10 20:25:12] Generated target 0000000000000000000000000000000000000000000000000000000000100000
+[2014-09-10 20:25:12] New block: 000000000e332601db5cc94226e90100c6a9b8f90fd2bf21a359bccc8c2abc32... diff 11
+[2014-09-10 20:25:12] Generated stratum merkle 6d4087352e98b6f66e3436b487a5f05495fbc8aaa6ebf1c4549e1f5b7f1199b5
+[2014-09-10 20:25:12] Generated stratum header 000000028c2abc32a359bccc0fd2bf21c6a9b8f926e90100db5cc9420e332601000000006d4087352e98b6f66e3436b487a5f05495fbc8aaa6ebf1c4549e1f5b7f1199b55410fa4b1c16a3f000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:12] Work job_id 130552592427064895246284714361508073609 nonce2 0 ntime 5410fa4b
+[2014-09-10 20:25:12] Generated target 0000000000000000000000000000000000000000000000000000000000100000
+[2014-09-10 20:25:12] Succeeded delayed connect
+[2014-09-10 20:25:12] NH x15 multi difficulty changed to 0.020
+[2014-09-10 20:25:12] nh scrypt multi difficulty changed to 128
+[2014-09-10 20:25:12] nh x13 multi difficulty changed to 0.020
+[2014-09-10 20:25:12] Preferred vector width reported 1
+[2014-09-10 20:25:12] Max work group size reported 256
+[2014-09-10 20:25:12] Max shaders calculated 2816
+[2014-09-10 20:25:12] Max mem alloc size is 1073741824
+[2014-09-10 20:25:12] GPU 0: selecting lookup gap of 2
+[2014-09-10 20:25:12] GPU 0: selecting thread concurrency of 8128
+[2014-09-10 20:25:12] Setting worksize to 64
+[2014-09-10 20:25:12] cl_amd_media_ops found, setting BITALIGN
+[2014-09-10 20:25:12] BFI_INT patch requiring device not found, will not BFI_INT patch
+[2014-09-10 20:25:12] No binary found, generating from source
+[2014-09-10 20:25:12] Building binary ckolivasHawaiigw64l4lg2tc8128nf10.bin
+[2014-09-10 20:25:12] Trying to open /usr/local/bin/ckolivas.cl...
+[2014-09-10 20:25:12] Trying to open ./ckolivas.cl...
+[2014-09-10 20:25:12] Trying to open ./kernel/ckolivas.cl...
+[2014-09-10 20:25:12] Using ./kernel/ckolivas.cl
+[2014-09-10 20:25:12] CompilerOptions: -I "." -I "./kernel" -I "." -D WORKSIZE=64 -D BITALIGN -I "/usr/local/bin" -D LOOKUP_GAP=2 -D CONCURRENT_THREADS=8128 -D NFACTOR=10
+[2014-09-10 20:25:12] nh nscrypt multi difficulty changed to 128
+[2014-09-10 20:25:12] NH NIST5 multi difficulty changed to 0.020
+[2014-09-10 20:25:12] nh x11 multi difficulty changed to 0.016
+[2014-09-10 20:25:12] Stratum authorisation success for sifcoin test
+[2014-09-10 20:25:12] sifcoin test alive
+[2014-09-10 20:25:12] Suspending stratum on sifcoin test
+[2014-09-10 20:25:12] Closing socket for stratum sifcoin test
+[2014-09-10 20:25:12] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:12] QRK difficulty changed to 2.220
+[2014-09-10 20:25:12] Stratum authorisation success for NH x15 multi
+[2014-09-10 20:25:12] NH x15 multi alive, testing stability
+[2014-09-10 20:25:12] Stratum authorisation success for nh x13 multi
+[2014-09-10 20:25:12] nh x13 multi alive, testing stability
+[2014-09-10 20:25:12] Stratum authorisation success for nh x11 multi
+[2014-09-10 20:25:12] nh x11 multi alive, testing stability
+[2014-09-10 20:25:12] Stratum authorisation success for nh scrypt multi
+[2014-09-10 20:25:12] nh scrypt multi alive
+[2014-09-10 20:25:12] Suspending stratum on nh scrypt multi
+[2014-09-10 20:25:12] Closing socket for stratum nh scrypt multi
+[2014-09-10 20:25:12] Stratum authorisation success for nh nscrypt multi
+[2014-09-10 20:25:12] nh nscrypt multi alive
+[2014-09-10 20:25:12] Suspending stratum on nh nscrypt multi
+[2014-09-10 20:25:12] Closing socket for stratum nh nscrypt multi
+[2014-09-10 20:25:12] Stratum authorisation success for NH NIST5 multi
+[2014-09-10 20:25:12] NH NIST5 multi alive
+[2014-09-10 20:25:12] Suspending stratum on NH NIST5 multi
+[2014-09-10 20:25:12] Closing socket for stratum NH NIST5 multi
+[2014-09-10 20:25:12] Select timeout/failed connect
+[2014-09-10 20:25:12] Failed to connect to stratum on stratum.nicehash.com:3338
+[2014-09-10 20:25:12] setup_stratum_socket() on nh keccak multi failed
+[2014-09-10 20:25:12] Initiating stratum failed on nh keccak multi
+[2014-09-10 20:25:12] Select timeout/failed connect
+[2014-09-10 20:25:12] Failed to connect to stratum on q2c.cpu-pool.net:3470
+[2014-09-10 20:25:12] setup_stratum_socket() on Qubit CPU Pool failed
+[2014-09-10 20:25:12] Initiating stratum failed on Qubit CPU Pool
+[2014-09-10 20:25:12] Select timeout/failed connect
+[2014-09-10 20:25:12] Failed to connect to stratum on p2pool.org:8372
+[2014-09-10 20:25:12] setup_stratum_socket() on dime failed
+[2014-09-10 20:25:12] Initiating stratum failed on dime
+[2014-09-10 20:25:12] Select timeout/failed connect
+[2014-09-10 20:25:12] Failed to connect to stratum on ani.zcoins.org:9792
+[2014-09-10 20:25:12] setup_stratum_socket() on Animecoin test failed
+[2014-09-10 20:25:12] Initiating stratum failed on Animecoin test
+[2014-09-10 20:25:12] Stratum authorisation success for QRK
+[2014-09-10 20:25:13] QRK alive
+[2014-09-10 20:25:13] QRK difficulty set to 2.219896
+[2014-09-10 20:25:13] Generated stratum merkle e7eefeaf07e1a26765d048739ab8db3b05361abf78804895128ec95a4dd0a142
+[2014-09-10 20:25:13] Generated stratum header 000000029fd06c8d297bcf1303c99e30d19e4b32a51a3f0330d52b21674eab2000000000e7eefeaf07e1a26765d048739ab8db3b05361abf78804895128ec95a4dd0a1425410fa401c76beff00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:13] Work job_id 42048313865117692621739874049215020867 nonce2 0 ntime 5410fa40
+[2014-09-10 20:25:13] Generated target 00000000000000000000000000000000000000000000c0bf416ca65173000000
+[2014-09-10 20:25:13] New block: 00000000674eab2030d52b21a51a3f03d19e4b3203c99e30297bcf139fd06c8d... diff 551
+[2014-09-10 20:25:13] Generated stratum merkle d8bf7ece8323fdfc18bece4d57a29c8c317b96d8fe2950769db5c23daf19311d
+[2014-09-10 20:25:13] Generated stratum header 000000029fd06c8d297bcf1303c99e30d19e4b32a51a3f0330d52b21674eab2000000000d8bf7ece8323fdfc18bece4d57a29c8c317b96d8fe2950769db5c23daf19311d5410fa401c76beff00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:13] Work job_id 255471182776316215609579000729300185748 nonce2 0 ntime 5410fa40
+[2014-09-10 20:25:13] Generated target 00000000000000000000000000000000000000000000c0bf416ca65173000000
+[2014-09-10 20:25:13] Suspending stratum on QRK
+[2014-09-10 20:25:13] Closing socket for stratum QRK
+[2014-09-10 20:25:14] Timed out waiting for response extranonce.subscribe
+[2014-09-10 20:25:14] Stratum authorisation success for myriad-groestl test
+[2014-09-10 20:25:14] myriad-groestl test alive
+[2014-09-10 20:25:14] Suspending stratum on myriad-groestl test
+[2014-09-10 20:25:14] Closing socket for stratum myriad-groestl test
+[2014-09-10 20:25:15] nh x13 multi extranonce change requested
+[2014-09-10 20:25:15] Generated stratum merkle 9c8711bf2313e84de2c6514e7f47e08e1cf51f8891a5873c78fd11b7cc176b8c
+[2014-09-10 20:25:15] Generated stratum header 0000000458aac17a2a6efd50ff2677ed7304c66e6d8c8033d185f7e80425b27e000000009c8711bf2313e84de2c6514e7f47e08e1cf51f8891a5873c78fd11b7cc176b8c5410fa241c0b2dd500000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:15] Work job_id 115ff5 nonce2 0 ntime 5410fa24
+[2014-09-10 20:25:15] Generated target 0000000000000000000000000000000000000000000000000000ceff31000000
+[2014-09-10 20:25:15] New block: 000000000425b27ed185f7e86d8c80337304c66eff2677ed2a6efd5058aac17a... diff 22
+[2014-09-10 20:25:15] Suspending stratum on nh x13 multi
+[2014-09-10 20:25:15] Closing socket for stratum nh x13 multi
+[2014-09-10 20:25:17] Binary size found in binary slot 0: 501088
+[2014-09-10 20:25:17] Initialising kernel ckolivas.cl with bitalign, unpatched BFI, nfactor 10, n 1024
+[2014-09-10 20:25:17] Creating buffer sized 532676608
+[2014-09-10 20:25:17] initCl() finished. Found Hawaii
+[2014-09-10 20:25:17] Thread 1 set pool = 14 (Dwarfpool whirlcoin test)
+[2014-09-10 20:25:17] Init GPU thread 1 GPU 0 virtual GPU 0
+[2014-09-10 20:25:17] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:17] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:17] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:17] Platform devices: 2
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] List of devices:
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] Selected 0: Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] Preferred vector width reported 1
+[2014-09-10 20:25:17] Max work group size reported 256
+[2014-09-10 20:25:17] Max shaders calculated 2816
+[2014-09-10 20:25:17] Max mem alloc size is 1073741824
+[2014-09-10 20:25:17] GPU 0: selecting lookup gap of 2
+[2014-09-10 20:25:17] GPU 0: selecting thread concurrency of 8128
+[2014-09-10 20:25:17] Setting worksize to 64
+[2014-09-10 20:25:17] cl_amd_media_ops found, setting BITALIGN
+[2014-09-10 20:25:17] BFI_INT patch requiring device not found, will not BFI_INT patch
+[2014-09-10 20:25:17] Loaded binary image ckolivasHawaiigw64l4lg2tc8128nf10.bin
+[2014-09-10 20:25:17] Initialising kernel ckolivas.cl with bitalign, unpatched BFI, nfactor 10, n 1024
+[2014-09-10 20:25:17] Creating buffer sized 532676608
+[2014-09-10 20:25:17] initCl() finished. Found Hawaii
+[2014-09-10 20:25:17] Assign threads for device 1
+[2014-09-10 20:25:17] Thread 2 set pool = 14 (Dwarfpool whirlcoin test)
+[2014-09-10 20:25:17] Init GPU thread 2 GPU 1 virtual GPU 1
+[2014-09-10 20:25:17] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:17] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:17] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:17] Platform devices: 2
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] List of devices:
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] Selected 1: Hawaii
+[2014-09-10 20:25:17] Preferred vector width reported 1
+[2014-09-10 20:25:17] Max work group size reported 256
+[2014-09-10 20:25:17] Max shaders calculated 2816
+[2014-09-10 20:25:17] Max mem alloc size is 1073741824
+[2014-09-10 20:25:17] GPU 1: selecting lookup gap of 2
+[2014-09-10 20:25:17] GPU 1: selecting thread concurrency of 8128
+[2014-09-10 20:25:17] Setting worksize to 64
+[2014-09-10 20:25:17] cl_amd_media_ops found, setting BITALIGN
+[2014-09-10 20:25:17] BFI_INT patch requiring device not found, will not BFI_INT patch
+[2014-09-10 20:25:17] Loaded binary image ckolivasHawaiigw64l4lg2tc8128nf10.bin
+[2014-09-10 20:25:17] Initialising kernel ckolivas.cl with bitalign, unpatched BFI, nfactor 10, n 1024
+[2014-09-10 20:25:17] Creating buffer sized 532676608
+[2014-09-10 20:25:17] initCl() finished. Found Hawaii
+[2014-09-10 20:25:17] Thread 3 set pool = 14 (Dwarfpool whirlcoin test)
+[2014-09-10 20:25:17] Init GPU thread 3 GPU 1 virtual GPU 1
+[2014-09-10 20:25:17] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:17] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:17] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:17] Platform devices: 2
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] List of devices:
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] Selected 1: Hawaii
+[2014-09-10 20:25:17] Preferred vector width reported 1
+[2014-09-10 20:25:17] Max work group size reported 256
+[2014-09-10 20:25:17] Max shaders calculated 2816
+[2014-09-10 20:25:17] Max mem alloc size is 1073741824
+[2014-09-10 20:25:17] GPU 1: selecting lookup gap of 2
+[2014-09-10 20:25:17] GPU 1: selecting thread concurrency of 8128
+[2014-09-10 20:25:17] Setting worksize to 64
+[2014-09-10 20:25:17] cl_amd_media_ops found, setting BITALIGN
+[2014-09-10 20:25:17] BFI_INT patch requiring device not found, will not BFI_INT patch
+[2014-09-10 20:25:17] Loaded binary image ckolivasHawaiigw64l4lg2tc8128nf10.bin
+[2014-09-10 20:25:17] Initialising kernel ckolivas.cl with bitalign, unpatched BFI, nfactor 10, n 1024
+[2014-09-10 20:25:17] Creating buffer sized 532676608
+[2014-09-10 20:25:17] initCl() finished. Found Hawaii
+[2014-09-10 20:25:17] Starting device 0 mining thread 0...
+[2014-09-10 20:25:17] Pushing sem post to thread 0
+[2014-09-10 20:25:17] Starting device 0 mining thread 1...
+[2014-09-10 20:25:17] Pushing sem post to thread 1
+[2014-09-10 20:25:17] Starting device 1 mining thread 0...
+[2014-09-10 20:25:17] Pushing sem post to thread 2
+[2014-09-10 20:25:17] Starting device 1 mining thread 1...
+[2014-09-10 20:25:17] Pushing sem post to thread 3
+[2014-09-10 20:25:17] Waiting on sem in miner thread
+[2014-09-10 20:25:17] Popping work from get queue to get work
+[2014-09-10 20:25:17] Waiting on sem in miner thread
+[2014-09-10 20:25:17] Popping work from get queue to get work
+[2014-09-10 20:25:17] Waiting on sem in miner thread
+[2014-09-10 20:25:17] Popping work from get queue to get work
+[2014-09-10 20:25:17] Waiting on sem in miner thread
+[2014-09-10 20:25:17] Popping work from get queue to get work
+[2014-09-10 20:25:17] Testing nh keccak multi
+[2014-09-10 20:25:17] Work update message received
+[2014-09-10 20:25:17] Selecting nh x11 multi for work
+[2014-09-10 20:25:17] Generated stratum merkle 75cdbf054d060705178720d5d058305531d90f753c4a758dfb2dea28151f873c
+[2014-09-10 20:25:17] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc90000000075cdbf054d060705178720d5d058305531d90f753c4a758dfb2dea28151f873c5410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:17] Work job_id 4 nonce2 0 ntime 5410fa2d
+[2014-09-10 20:25:17] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:17] API not running - API will not be available
+[2014-09-10 20:25:17] Generated stratum work
+[2014-09-10 20:25:17] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:17] New block: 000000000038dbc9f17938ba1fb9e6dfe33919163893b8a751462c5e8ff04deb... diff 169
+[2014-09-10 20:25:17] Selecting nh x11 multi for work
+[2014-09-10 20:25:17] Generated stratum merkle 0631dcf663fc83a5b942855f3d8dd8f9e2b7b7a5a3e69c940c8974f922247229
+[2014-09-10 20:25:17] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc9000000000631dcf663fc83a5b942855f3d8dd8f9e2b7b7a5a3e69c940c8974f9222472295410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:17] Work job_id 4 nonce2 1 ntime 5410fa2d
+[2014-09-10 20:25:17] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:17] Generated stratum work
+[2014-09-10 20:25:17] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:17] Selecting nh x11 multi for work
+[2014-09-10 20:25:17] Generated stratum merkle 193cfe0794cd4f5bc3da7733ba1411b4ea750a3c8795e3ab28157bc9f5ba7eba
+[2014-09-10 20:25:17] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc900000000193cfe0794cd4f5bc3da7733ba1411b4ea750a3c8795e3ab28157bc9f5ba7eba5410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:17] Work job_id 4 nonce2 2 ntime 5410fa2d
+[2014-09-10 20:25:17] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:17] Generated stratum work
+[2014-09-10 20:25:17] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:17] Selecting nh x11 multi for work
+[2014-09-10 20:25:17] Generated stratum merkle 1e418b08802b4979cb0be977b615f81fc620baf8dcda03de9d741a2a2ed542cc
+[2014-09-10 20:25:17] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc9000000001e418b08802b4979cb0be977b615f81fc620baf8dcda03de9d741a2a2ed542cc5410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:17] Work job_id 4 nonce2 3 ntime 5410fa2d
+[2014-09-10 20:25:17] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:17] Generated stratum work
+[2014-09-10 20:25:17] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:17] Applying pool settings for nh x11 multi...
+[2014-09-10 20:25:17] Selecting nh x11 multi for work
+[2014-09-10 20:25:17] Soft Reset... Shutdown threads...
+[2014-09-10 20:25:17] Generated stratum merkle b50d1eb11736e986143398d3647ce1391aadb0238569d9c10b4270c0bea305ae
+[2014-09-10 20:25:17] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc900000000b50d1eb11736e986143398d3647ce1391aadb0238569d9c10b4270c0bea305ae5410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:17] Work job_id 4 nonce2 4 ntime 5410fa2d
+[2014-09-10 20:25:17] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:17] Generated stratum work
+[2014-09-10 20:25:17] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:17] Soft Reset... Restarting threads...
+[2014-09-10 20:25:17] Init GPU thread 0 GPU 0 virtual GPU 0
+[2014-09-10 20:25:17] CL Platform vendor: Advanced Micro Devices, Inc.
+[2014-09-10 20:25:17] CL Platform name: AMD Accelerated Parallel Processing
+[2014-09-10 20:25:17] CL Platform version: OpenCL 1.2 AMD-APP (1526.3)
+[2014-09-10 20:25:17] Platform devices: 2
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] List of devices:
+[2014-09-10 20:25:17] 	0	Hawaii
+[2014-09-10 20:25:17] Selected 0: Hawaii
+[2014-09-10 20:25:17] 	1	Hawaii
+[2014-09-10 20:25:17] Preferred vector width reported 1
+[2014-09-10 20:25:17] Max work group size reported 256
+[2014-09-10 20:25:17] Max shaders calculated 2816
+[2014-09-10 20:25:17] Max mem alloc size is 1073741824
+[2014-09-10 20:25:17] GPU 0: selecting lookup gap of 2
+[2014-09-10 20:25:17] GPU 0: selecting thread concurrency of 8128
+[2014-09-10 20:25:17] Setting worksize to 64
+[2014-09-10 20:25:17] cl_amd_media_ops found, setting BITALIGN
+[2014-09-10 20:25:17] BFI_INT patch requiring device not found, will not BFI_INT patch
+[2014-09-10 20:25:17] No binary found, generating from source
+[2014-09-10 20:25:17] Building binary darkcoin-modHawaiigw64l4.bin
+[2014-09-10 20:25:17] Trying to open /usr/local/bin/darkcoin-mod.cl...
+[2014-09-10 20:25:17] Trying to open ./darkcoin-mod.cl...
+[2014-09-10 20:25:17] Trying to open ./kernel/darkcoin-mod.cl...
+[2014-09-10 20:25:17] Using ./kernel/darkcoin-mod.cl
+[2014-09-10 20:25:17] CompilerOptions: -I "." -I "./kernel" -I "." -D WORKSIZE=64 -D BITALIGN -I "/usr/local/bin"
+[2014-09-10 20:25:17] Succeeded delayed connect
+[2014-09-10 20:25:18] Failed to get sessionid in initiate_stratum
+[2014-09-10 20:25:18] Stratum extranonce subscribe for nh keccak multi
+[2014-09-10 20:25:18] nh keccak multi difficulty changed to 128
+[2014-09-10 20:25:18] Stratum authorisation success for nh keccak multi
+[2014-09-10 20:25:18] nh keccak multi alive
+[2014-09-10 20:25:18] Testing Qubit CPU Pool
+[2014-09-10 20:25:18] Suspending stratum on nh keccak multi
+[2014-09-10 20:25:18] Closing socket for stratum nh keccak multi
+[2014-09-10 20:25:19] Select timeout/failed connect
+[2014-09-10 20:25:19] Failed to connect to stratum on q2c.cpu-pool.net:3470
+[2014-09-10 20:25:19] setup_stratum_socket() on Qubit CPU Pool failed
+[2014-09-10 20:25:19] Initiating stratum failed on Qubit CPU Pool
+[2014-09-10 20:25:19] Testing dime
+[2014-09-10 20:25:19] Staged work: total (1) > max (0), discarding
+[2014-09-10 20:25:19] Discarded work
+[2014-09-10 20:25:19] Selecting nh x11 multi for work
+[2014-09-10 20:25:19] Generated stratum merkle 41b21b15671a5ba0c8ec408dbf11e342c2d2ca28e4ea5b5049f571c1bea0d35e
+[2014-09-10 20:25:19] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc90000000041b21b15671a5ba0c8ec408dbf11e342c2d2ca28e4ea5b5049f571c1bea0d35e5410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:19] Work job_id 4 nonce2 5 ntime 5410fa2d
+[2014-09-10 20:25:19] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:19] Generated stratum work
+[2014-09-10 20:25:19] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:19] 81.0 C  F: 50%(-1RPM)  E: 1035MHz  M: 1375Mhz  V: 0.000V  A: 100%  P: 0%
+[2014-09-10 20:25:19] 94.0 C  F: 100%(-1RPM)  E: 1028MHz  M: 1375Mhz  V: 0.000V  A: 100%  P: 0%
+[2014-09-10 20:25:20] Select timeout/failed connect
+[2014-09-10 20:25:20] Failed to connect to stratum on p2pool.org:8372
+[2014-09-10 20:25:20] setup_stratum_socket() on dime failed
+[2014-09-10 20:25:20] Initiating stratum failed on dime
+[2014-09-10 20:25:20] Testing Animecoin test
+[2014-09-10 20:25:21] Select timeout/failed connect
+[2014-09-10 20:25:21] Failed to connect to stratum on ani.zcoins.org:9792
+[2014-09-10 20:25:21] setup_stratum_socket() on Animecoin test failed
+[2014-09-10 20:25:21] Initiating stratum failed on Animecoin test
+[2014-09-10 20:25:21] Staged work: total (1) > max (0), discarding
+[2014-09-10 20:25:21] Discarded work
+[2014-09-10 20:25:21] Selecting nh x11 multi for work
+[2014-09-10 20:25:21] Generated stratum merkle 811bcd62d28584a4062c6c5e0be5d0fe5caf9f500a39e7959f9f80a97e32de90
+[2014-09-10 20:25:21] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc900000000811bcd62d28584a4062c6c5e0be5d0fe5caf9f500a39e7959f9f80a97e32de905410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:21] Work job_id 4 nonce2 6 ntime 5410fa2d
+[2014-09-10 20:25:21] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:21] Generated stratum work
+[2014-09-10 20:25:21] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:21] Staged work: total (1) > max (0), discarding
+[2014-09-10 20:25:21] Discarded work
+[2014-09-10 20:25:21] Temperature rising while in target range, increasing fanspeed
+[2014-09-10 20:25:21] Selecting nh x11 multi for work
+[2014-09-10 20:25:21] Setting GPU 0 fan percentage to 51
+[2014-09-10 20:25:21] GPU 0 call to fanspeed get failed
+[2014-09-10 20:25:21] Generated stratum merkle b89ad29070a7cb1f9f2c202718b56e033785f73590c715849af02e8358ff1fc1
+[2014-09-10 20:25:21] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc900000000b89ad29070a7cb1f9f2c202718b56e033785f73590c715849af02e8358ff1fc15410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:21] Work job_id 4 nonce2 7 ntime 5410fa2d
+[2014-09-10 20:25:21] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:21] Generated stratum work
+[2014-09-10 20:25:21] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:21] 82.0 C  F: 51%(-1RPM)  E: 1040MHz  M: 1375Mhz  V: 0.000V  A: 100%  P: 0%
+[2014-09-10 20:25:21] 94.0 C  F: 100%(-1RPM)  E: 1023MHz  M: 1375Mhz  V: 0.000V  A: 0%  P: 0%
+[2014-09-10 20:25:23] Staged work: total (1) > max (0), discarding
+[2014-09-10 20:25:23] Discarded work
+[2014-09-10 20:25:23] Selecting nh x11 multi for work
+[2014-09-10 20:25:23] (5s):0.000 (avg):0.000h/s | A:0  R:0  HW:0  WU:0.000/m
+[2014-09-10 20:25:23] Generated stratum merkle c0bf73b65476b58138814c40fc02a79aa6eb3f312f94c37c83f72b7226f9d214
+[2014-09-10 20:25:23] Generated stratum header 000000028ff04deb51462c5e3893b8a7e33919161fb9e6dff17938ba0038dbc900000000c0bf73b65476b58138814c40fc02a79aa6eb3f312f94c37c83f72b7226f9d2145410fa2d1c01826a00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000080020000
+[2014-09-10 20:25:23] Work job_id 4 nonce2 8 ntime 5410fa2d
+[2014-09-10 20:25:23] Generated target 000000000000000000000000000000000000000040a2ffffff7fc17f3e000000
+[2014-09-10 20:25:23] Generated stratum work
+[2014-09-10 20:25:23] Pushing work from nh x11 multi to hash queue
+[2014-09-10 20:25:23] 82.0 C  F: 51%(-1RPM)  E: 1040MHz  M: 1375Mhz  V: 0.000V  A: 100%  P: 0%
+[2014-09-10 20:25:23] 94.0 C  F: 100%(-1RPM)  E: 1020MHz  M: 1375Mhz  V: 0.000V  A: 100%  P: 0%
