@@ -4,8 +4,8 @@
 
 * Added support for animecoin, darkcoin, fuguecoin, groestlcoin, inkcoin,
   marucoin, myriadcoin-groestl, quarkcoin, qubitcoin, sifcoin, twecoin,
-  darkcoin-mod ("X11-mod"), marucoin-mod ("X13-mod"), maxcoin (by
-  _mrbrdo_).
+  diamond v2 ("diamond"), darkcoin-mod ("X11-mod"), marucoin-mod ("X13-mod"),
+  maxcoin (by _mrbrdo_).
 * `intensity`, `xintensity`, `rawintensity`, `gpu-memclock`,
   `gpu-engine`, `thread-concurrency`, `gpu-threads` now also have a
   `pool-*` version to configure them for each pool separately
