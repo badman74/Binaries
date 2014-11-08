@@ -1,10 +1,17 @@
 # Release news
 
+## Version 5.1.0
+
+* Added support for neoscrypt (by _ystarnaud_)
+* Implemented the kernel updates for Xn algorithms, groestlcoin and others (by _badman74_)
+* Added support for diamond v2 and whirlcoin (by _badman74_)
+* Added a new scrypt kernel ("arebyp") (by _badman74_)
+
 ## Version 5.0.0 - 2nd September 2014
 
 * Added support for animecoin, darkcoin, fuguecoin, groestlcoin, inkcoin,
   marucoin, myriadcoin-groestl, quarkcoin, qubitcoin, sifcoin, twecoin,
-  diamond v2 ("diamond"), darkcoin-mod ("X11-mod"), marucoin-mod ("X13-mod"),
+  darkcoin-mod ("X11-mod"), marucoin-mod ("X13-mod"),
   maxcoin (by _mrbrdo_).
 * `intensity`, `xintensity`, `rawintensity`, `gpu-memclock`,
   `gpu-engine`, `thread-concurrency`, `gpu-threads` now also have a
