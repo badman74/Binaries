@@ -268,9 +268,6 @@ For more details on configuration options, see [Event Options](#event-options) b
 
 * [config](#config) `--config` or `-c`
 * [default-config](#default-config) `--default-config`
-* [remote-config-retry](#remote-config-retry) `--remote-config-retry`
-* [remote-config-wait](#remote-config-wait) `--remote-config-wait`
-* [remote-config-usecache](#remote-config-usecache) `--remote-config-usecache`
 * [help](#help) `--help` or `-h`
 * [ndevs](#ndevs) `-ndevs` or `-n`
 * [version](#version) `--version` or `-V`
@@ -313,60 +310,6 @@ Specifies the name of the default configuration file to be loaded at start up an
 
 ```
 # ./sgminer --default_config defaultconfig.conf
-```
-
-[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
-
-### remote-config-retry
-
-Specifies the number of time to retry downloading a remote configuration file.
-
-*Syntax:* `--remote-config-retry <value>`
-
-*Argument:* `number` Number of retries
-
-*Default:* `3`
-
-*Example:*
-
-```
-# ./sgminer --remote-config-retry 4 http://myserver.com/configs/defaultconfig.conf
-```
-
-[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
-
-### remote-config-wait
-
-Specifies the number of seconds to wait between retries when downloading a remote configuration file fails.
-
-*Syntax:* `--remote-config-wait <value>`
-
-*Argument:* `number` Number of seconds
-
-*Default:* `10`
-
-*Example:*
-
-```
-# ./sgminer --remote-config-retry 4 --remote-config-wait 15 http://myserver.com/configs/defaultconfig.conf
-```
-
-[Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
-
-### remote-config-usecache
-
-Tells sgminer to use the last successfully downloaded copy of the remote configuration file if all attempts to download fails.
-
-*Syntax:* `--remote-config-usecache`
-
-*Argument:* `None`
-
-*Default:* `False`
-
-*Example:*
-
-```
-# ./sgminer --remote-config-retry 4 --remote-config-usecache http://myserver.com/configs/defaultconfig.conf
 ```
 
 [Top](#configuration-and-command-line-options) :: [CLI Only options](#cli-only-options)
@@ -842,7 +785,7 @@ Overrides the default scrypt parameter N, specified as the factor of 2 (`N = 2^n
 
 ### blake-compact
 
-Sets SPH_COMPACT_BLAKE64 for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_COMPACT\_BLAKE64 for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -860,7 +803,7 @@ Sets SPH_COMPACT_BLAKE64 for Xn derived algorithms. Changing this may improve ha
 
 ### hamsi-expand-big
 
-Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_HAMSI\_EXPAND\_BIG for X13 derived algorithms. Values `"4"` and `"1"` are commonly used. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -878,7 +821,7 @@ Sets SPH_HAMSI_EXPAND_BIG for X13 derived algorithms. Values `"4"` and `"1"` are
 
 ### hamsi-short
 
-Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_HAMSI\_SHORT for X13 derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -896,7 +839,7 @@ Sets SPH_HAMSI_SHORT for X13 derived algorithms. Changing this may improve hashr
 
 ### keccak-unroll
 
-Sets SPH_KECCAK_UNROLL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_KECCAK\_UNROLL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 
@@ -914,7 +857,7 @@ Sets SPH_KECCAK_UNROLL for Xn derived algorithms. Changing this may improve hash
 
 ### luffa-parallel
 
-Sets SPH_LUFFA_PARALLEL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
+Sets SPH\_LUFFA\_PARALLEL for Xn derived algorithms. Changing this may improve hashrate. Which value is better depends on GPU type and even manufacturer (i.e. exact GPU model).
 
 *Available*: Global
 

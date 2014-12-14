@@ -175,7 +175,7 @@ void SHA256(uint4*restrict state0,uint4*restrict state1, const uint4 block0, con
 {
 	uint4 S0 = *state0;
 	uint4 S1 = *state1;
-	
+
 #define A S0.x
 #define B S0.y
 #define C S0.z
@@ -366,7 +366,7 @@ void SHA256(uint4*restrict state0,uint4*restrict state1, const uint4 block0, con
 
 	W[ 3].w += Wr1(W[ 3].y) + W[ 2].x + Wr2(W[ 0].x);
 	RND(B,C,D,E,F,G,H,A, W[3].w+ K[62]);
-	
+
 #undef A
 #undef B
 #undef C
@@ -417,7 +417,7 @@ void SHA256_fresh(uint4*restrict state0,uint4*restrict state1, const uint4 block
 	RND(C,D,E,F,G,H,A,B, W[1].z+ K[6]);
 	W[1].w = block1.w;
 	RND(B,C,D,E,F,G,H,A, W[1].w+ K[7]);
-	
+
 	W[2].x = block2.x;
 	RND(A,B,C,D,E,F,G,H, W[2].x+ K[8]);
 	W[2].y = block2.y;
@@ -426,7 +426,7 @@ void SHA256_fresh(uint4*restrict state0,uint4*restrict state1, const uint4 block
 	RND(G,H,A,B,C,D,E,F, W[2].z+ K[10]);
 	W[2].w = block2.w;
 	RND(F,G,H,A,B,C,D,E, W[2].w+ K[11]);
-	
+
 	W[3].x = block3.x;
 	RND(E,F,G,H,A,B,C,D, W[3].x+ K[12]);
 	W[3].y = block3.y;
@@ -579,7 +579,7 @@ void SHA256_fresh(uint4*restrict state0,uint4*restrict state1, const uint4 block
 
 	W[3].w += Wr1(W[3].y) + W[2].x + Wr2(W[0].x);
 	RND(B,C,D,E,F,G,H,A, W[3].w+ K[62]);
-	
+
 #undef A
 #undef B
 #undef C
@@ -683,7 +683,7 @@ void SHA256_fixed(uint4*restrict state0,uint4*restrict state1)
 	RND(D,E,F,G,H,A,B,C, fixedW[61]);
 	RND(C,D,E,F,G,H,A,B, fixedW[62]);
 	RND(B,C,D,E,F,G,H,A, fixedW[63]);
-	
+
 #undef A
 #undef B
 #undef C
@@ -703,7 +703,7 @@ void shittify(uint4 B[8])
 	tmp[1] = (uint4)(B[2].x,B[3].y,B[0].z,B[1].w);
 	tmp[2] = (uint4)(B[3].x,B[0].y,B[1].z,B[2].w);
 	tmp[3] = (uint4)(B[0].x,B[1].y,B[2].z,B[3].w);
-	
+
 #pragma unroll
 	for(uint i=0; i<4; ++i)
 		B[i] = EndianSwap(tmp[i]);
@@ -712,7 +712,7 @@ void shittify(uint4 B[8])
 	tmp[1] = (uint4)(B[6].x,B[7].y,B[4].z,B[5].w);
 	tmp[2] = (uint4)(B[7].x,B[4].y,B[5].z,B[6].w);
 	tmp[3] = (uint4)(B[4].x,B[5].y,B[6].z,B[7].w);
-	
+
 #pragma unroll
 	for(uint i=0; i<4; ++i)
 		B[i+4] = EndianSwap(tmp[i]);
@@ -725,7 +725,7 @@ void unshittify(uint4 B[8])
 	tmp[1] = (uint4)(B[0].x,B[3].y,B[2].z,B[1].w);
 	tmp[2] = (uint4)(B[1].x,B[0].y,B[3].z,B[2].w);
 	tmp[3] = (uint4)(B[2].x,B[1].y,B[0].z,B[3].w);
-	
+
 #pragma unroll
 	for(uint i=0; i<4; ++i)
 		B[i] = EndianSwap(tmp[i]);
@@ -734,7 +734,7 @@ void unshittify(uint4 B[8])
 	tmp[1] = (uint4)(B[4].x,B[7].y,B[6].z,B[5].w);
 	tmp[2] = (uint4)(B[5].x,B[4].y,B[7].z,B[6].w);
 	tmp[3] = (uint4)(B[6].x,B[5].y,B[4].z,B[7].w);
-	
+
 #pragma unroll
 	for(uint i=0; i<4; ++i)
 		B[i+4] = EndianSwap(tmp[i]);
@@ -745,12 +745,12 @@ void unshittify(uint4 B[8])
 void salsa(uint4 B[8])
 {
         uint4 w[4];
- 
+
         w[0] = (B[0]^=B[4]);
         w[1] = (B[1]^=B[5]);
         w[2] = (B[2]^=B[6]);
         w[3] = (B[3]^=B[7]);
- 
+
         w[0] ^= rotl(w[3]     +w[2]     , 7U);
         w[1] ^= rotl(w[0]     +w[3]     , 9U);
         w[2] ^= rotl(w[1]     +w[0]     ,13U);
@@ -783,12 +783,12 @@ void salsa(uint4 B[8])
         w[1] ^= rotl(w[2].wxyz+w[3].zwxy, 9U);
         w[0] ^= rotl(w[1].wxyz+w[2].zwxy,13U);
         w[3] ^= rotl(w[0].wxyz+w[1].zwxy,18U);
- 
+
         w[0] = (B[4]^=(B[0]+=w[0]));
         w[1] = (B[5]^=(B[1]+=w[1]));
         w[2] = (B[6]^=(B[2]+=w[2]));
         w[3] = (B[7]^=(B[3]+=w[3]));
- 
+
         w[0] ^= rotl(w[3]     +w[2]     , 7U);
         w[1] ^= rotl(w[0]     +w[3]     , 9U);
         w[2] ^= rotl(w[1]     +w[0]     ,13U);
@@ -821,7 +821,7 @@ void salsa(uint4 B[8])
         w[1] ^= rotl(w[2].wxyz+w[3].zwxy, 9U);
         w[0] ^= rotl(w[1].wxyz+w[2].zwxy,13U);
         w[3] ^= rotl(w[0].wxyz+w[1].zwxy,18U);
- 
+
         B[4] += w[0];
         B[5] += w[1];
         B[6] += w[2];
@@ -968,7 +968,7 @@ const uint4 midstate0, const uint4 midstate16, const uint target)
 	SHA256(&tstate0, &tstate1, input[0],input[1],input[2],input[3]);
 
 #pragma unroll
-	for (uint i=0; i<4; i++) 
+	for (uint i=0; i<4; i++)
 	{
 		pad0 = tstate0;
 		pad1 = tstate1;

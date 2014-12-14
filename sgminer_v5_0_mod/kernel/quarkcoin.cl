@@ -4,7 +4,7 @@
  * ==========================(LICENSE BEGIN)============================
  *
  * Copyright (c) 2014  phm
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -12,10 +12,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -249,25 +249,25 @@ __kernel void search(__global unsigned char* block, volatile __global uint* outp
 
 #pragma unroll 4
   for(int i=2;i<6;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i+10], i+11) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 3
   for(int i=6;i<9;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 4
   for(int i=9;i<13;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
 #pragma unroll 3
   for(int i=13;i<16;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i-13], (i-13)+1) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
@@ -332,7 +332,7 @@ sph_u64 XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
   tmp = (mv[12] ^ BMW_H[12]) - (mv[ 4] ^ BMW_H[ 4]) - (mv[ 6] ^ BMW_H[ 6]) - (mv[ 9] ^ BMW_H[ 9]) + (mv[13] ^ BMW_H[13]);
   q[15] = (SHR(tmp, 1) ^ SHL(tmp, 3) ^ SPH_ROTL64(tmp, 4) ^ SPH_ROTL64(tmp, 37)) + BMW_H[0];
 
-  
+
 #pragma unroll 2
   for(int i=0;i<2;i++)
   {
@@ -359,25 +359,25 @@ sph_u64 XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 
 #pragma unroll 4
   for(int i=2;i<6;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i+10], i+11) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 3
   for(int i=6;i<9;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 4
   for(int i=9;i<13;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
 #pragma unroll 3
   for(int i=13;i<16;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i-13], (i-13)+1) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
@@ -423,7 +423,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 #endif
   int init = get_local_id(0);
   int step = get_local_size(0);
-	
+
   for (int i = init; i < 256; i += step)
   {
     T0_C[i] = T0[i];
@@ -517,7 +517,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
     hash.h8[6] = (!dec ? SWAP8(h6) : hash.h8[6]);
     hash.h8[7] = (!dec ? SWAP8(h7) : hash.h8[7]);
   }
- 
+
   // groestl
 #if !SPH_SMALL_FOOTPRINT_GROESTL
   __local sph_u64 T0_C[256], T1_C[256], T2_C[256], T3_C[256];
@@ -527,7 +527,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 #endif
   int init = get_local_id(0);
   int step = get_local_size(0);
-	
+
   for (int i = init; i < 256; i += step)
   {
     T0_C[i] = T0[i];
@@ -685,7 +685,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 
   }
   {
- 
+
     // bmw
   sph_u64 BMW_H[16];
 #pragma unroll 16
@@ -771,25 +771,25 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 
 #pragma unroll 4
   for(int i=2;i<6;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i+10], i+11) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 3
   for(int i=6;i<9;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 4
   for(int i=9;i<13;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
 #pragma unroll 3
   for(int i=13;i<16;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i-13], (i-13)+1) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
@@ -854,7 +854,7 @@ sph_u64 XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
   tmp = (mv[12] ^ BMW_H[12]) - (mv[ 4] ^ BMW_H[ 4]) - (mv[ 6] ^ BMW_H[ 6]) - (mv[ 9] ^ BMW_H[ 9]) + (mv[13] ^ BMW_H[13]);
   q[15] = (SHR(tmp, 1) ^ SHL(tmp, 3) ^ SPH_ROTL64(tmp, 4) ^ SPH_ROTL64(tmp, 37)) + BMW_H[0];
 
-  
+
 #pragma unroll 2
   for(int i=0;i<2;i++)
   {
@@ -881,25 +881,25 @@ sph_u64 XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
 
 #pragma unroll 4
   for(int i=2;i<6;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i+10], i+11) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 3
   for(int i=6;i<9;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i+7]);
   }
 #pragma unroll 4
   for(int i=9;i<13;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i+3], i+4) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
 #pragma unroll 3
   for(int i=13;i<16;i++) {
-    q[i+16] = CONST_EXP2 + 
+    q[i+16] = CONST_EXP2 +
     ((  ((i+16)*(0x0555555555555555ull)) + SPH_ROTL64(mv[i], i+1) +
       SPH_ROTL64(mv[i-13], (i-13)+1) - SPH_ROTL64(mv[i-6], (i-6)+1) ) ^ BMW_H[i-9]);
   }
@@ -939,7 +939,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
   // keccak
 
   sph_u64 a00 = 0, a01 = 0, a02 = 0, a03 = 0, a04 = 0;
-  sph_u64 a10 = 0, a11 = 0, a12 = 0, a13 = 0, a14 = 0; 
+  sph_u64 a10 = 0, a11 = 0, a12 = 0, a13 = 0, a14 = 0;
   sph_u64 a20 = 0, a21 = 0, a22 = 0, a23 = 0, a24 = 0;
   sph_u64 a30 = 0, a31 = 0, a32 = 0, a33 = 0, a34 = 0;
   sph_u64 a40 = 0, a41 = 0, a42 = 0, a43 = 0, a44 = 0;
@@ -1007,7 +1007,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
     // keccak
 
     sph_u64 a00 = 0, a01 = 0, a02 = 0, a03 = 0, a04 = 0;
-    sph_u64 a10 = 0, a11 = 0, a12 = 0, a13 = 0, a14 = 0; 
+    sph_u64 a10 = 0, a11 = 0, a12 = 0, a13 = 0, a14 = 0;
     sph_u64 a20 = 0, a21 = 0, a22 = 0, a23 = 0, a24 = 0;
     sph_u64 a30 = 0, a31 = 0, a32 = 0, a33 = 0, a34 = 0;
     sph_u64 a40 = 0, a41 = 0, a42 = 0, a43 = 0, a44 = 0;
@@ -1088,7 +1088,7 @@ XH64 =  XL64^q[24]^q[25]^q[26]^q[27]^q[28]^q[29]^q[30]^q[31];
     hash.h8[5] = (!dec ? DEC64E(h6l) : hash.h8[5]);
     hash.h8[6] = (!dec ? DEC64E(h7h) : hash.h8[6]);
     hash.h8[7] = (!dec ? DEC64E(h7l) : hash.h8[7]);
- 
+
   }
 
   bool result = (SWAP8(hash.h8[3]) <= target);

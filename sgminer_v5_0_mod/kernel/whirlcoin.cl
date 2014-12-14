@@ -6,7 +6,7 @@
  * Copyright (c) 2014  phm
  * Copyright (c) 2014 djm34
   * Copyright (c) 2014 uray
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -14,10 +14,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -1165,14 +1165,14 @@ typedef union {
 void whirlpool_round(sph_u64* n, sph_u64* h){
     sph_u64 t0, t1, t2, t3, t4, t5, t6, t7;
     for (unsigned r = 0; r < 10; r ++) {
-        t0 = (ROUND_ELT(h, 0, 7, 6, 5, 4, 3, 2, 1) ^ rc[r]); 
-        t1 = (ROUND_ELT(h, 1, 0, 7, 6, 5, 4, 3, 2) ^ 0 ); 
-        t2 = (ROUND_ELT(h, 2, 1, 0, 7, 6, 5, 4, 3) ^ 0 ); 
-        t3 = (ROUND_ELT(h, 3, 2, 1, 0, 7, 6, 5, 4) ^ 0 ); 
-        t4 = (ROUND_ELT(h, 4, 3, 2, 1, 0, 7, 6, 5) ^ 0 );  
-        t5 = (ROUND_ELT(h, 5, 4, 3, 2, 1, 0, 7, 6) ^ 0 );  
-        t6 = (ROUND_ELT(h, 6, 5, 4, 3, 2, 1, 0, 7) ^ 0 );  
-        t7 = (ROUND_ELT(h, 7, 6, 5, 4, 3, 2, 1, 0) ^ 0 );  
+        t0 = (ROUND_ELT(h, 0, 7, 6, 5, 4, 3, 2, 1) ^ rc[r]);
+        t1 = (ROUND_ELT(h, 1, 0, 7, 6, 5, 4, 3, 2) ^ 0 );
+        t2 = (ROUND_ELT(h, 2, 1, 0, 7, 6, 5, 4, 3) ^ 0 );
+        t3 = (ROUND_ELT(h, 3, 2, 1, 0, 7, 6, 5, 4) ^ 0 );
+        t4 = (ROUND_ELT(h, 4, 3, 2, 1, 0, 7, 6, 5) ^ 0 );
+        t5 = (ROUND_ELT(h, 5, 4, 3, 2, 1, 0, 7, 6) ^ 0 );
+        t6 = (ROUND_ELT(h, 6, 5, 4, 3, 2, 1, 0, 7) ^ 0 );
+        t7 = (ROUND_ELT(h, 7, 6, 5, 4, 3, 2, 1, 0) ^ 0 );
 
         h[0] = t0;
         h[1] = t1;
@@ -1183,14 +1183,14 @@ void whirlpool_round(sph_u64* n, sph_u64* h){
         h[6] = t6;
         h[7] = t7;
 
-        t0 = ROUND_ELT(n, 0, 7, 6, 5, 4, 3, 2, 1) ^ h[0]; 
-        t1 = ROUND_ELT(n, 1, 0, 7, 6, 5, 4, 3, 2) ^ h[1]; 
-        t2 = ROUND_ELT(n, 2, 1, 0, 7, 6, 5, 4, 3) ^ h[2]; 
-        t3 = ROUND_ELT(n, 3, 2, 1, 0, 7, 6, 5, 4) ^ h[3]; 
-        t4 = ROUND_ELT(n, 4, 3, 2, 1, 0, 7, 6, 5) ^ h[4]; 
-        t5 = ROUND_ELT(n, 5, 4, 3, 2, 1, 0, 7, 6) ^ h[5]; 
-        t6 = ROUND_ELT(n, 6, 5, 4, 3, 2, 1, 0, 7) ^ h[6]; 
-        t7 = ROUND_ELT(n, 7, 6, 5, 4, 3, 2, 1, 0) ^ h[7]; 
+        t0 = ROUND_ELT(n, 0, 7, 6, 5, 4, 3, 2, 1) ^ h[0];
+        t1 = ROUND_ELT(n, 1, 0, 7, 6, 5, 4, 3, 2) ^ h[1];
+        t2 = ROUND_ELT(n, 2, 1, 0, 7, 6, 5, 4, 3) ^ h[2];
+        t3 = ROUND_ELT(n, 3, 2, 1, 0, 7, 6, 5, 4) ^ h[3];
+        t4 = ROUND_ELT(n, 4, 3, 2, 1, 0, 7, 6, 5) ^ h[4];
+        t5 = ROUND_ELT(n, 5, 4, 3, 2, 1, 0, 7, 6) ^ h[5];
+        t6 = ROUND_ELT(n, 6, 5, 4, 3, 2, 1, 0, 7) ^ h[6];
+        t7 = ROUND_ELT(n, 7, 6, 5, 4, 3, 2, 1, 0) ^ h[7];
 
         n[0] = t0;
         n[1] = t1;
@@ -1199,7 +1199,7 @@ void whirlpool_round(sph_u64* n, sph_u64* h){
         n[4] = t4;
         n[5] = t5;
         n[6] = t6;
-        n[7] = t7;    
+        n[7] = t7;
     }
 }
 
@@ -1208,9 +1208,9 @@ __kernel void search(__global unsigned char* block, __global hash_t* hashes)
 {
    uint gid = get_global_id(0);
     __global hash_t *hash = &(hashes[gid-get_global_offset(0)]);
-  
 
-    sph_u64 n[8]; 
+
+    sph_u64 n[8];
     sph_u64 h[8];
     sph_u64 state[8];
 
@@ -1236,13 +1236,13 @@ __kernel void search(__global unsigned char* block, __global hash_t* hashes)
     h[6] = state[6] = n[6] ^ DEC64LE(block +   48);
     h[7] = state[7] = n[7] ^ DEC64LE(block +   56);
 
-    
+
     n[0] = DEC64LE(block +  64);
     n[1] = DEC64LE(block +  72);
     n[1] &= 0x00000000FFFFFFFF;
     n[1] ^= ((sph_u64) gid) << 32;
     n[3] = n[4] = n[5] = n[6] = 0;
-    n[2] = 0x0000000000000080; 
+    n[2] = 0x0000000000000080;
     n[7] = 0x8002000000000000;
     sph_u64 temp0,temp1,temp2,temp7;
     temp0 = n[0];
@@ -1260,7 +1260,7 @@ __kernel void search(__global unsigned char* block, __global hash_t* hashes)
     n[7] ^= h[7];
 
     whirlpool_round(n, h);
-    
+
     hash->h8[0] = state[0] ^ n[0] ^ temp0;
     hash->h8[1] = state[1] ^ n[1] ^ temp1;
     hash->h8[2] = state[2] ^ n[2] ^ temp2;
@@ -1277,7 +1277,7 @@ __kernel void search1(__global hash_t* hashes)
    uint gid = get_global_id(0);
     __global hash_t *hash = &(hashes[gid-get_global_offset(0)]);
 
-    sph_u64 n[8]; 
+    sph_u64 n[8];
     sph_u64 h[8];
     sph_u64 state[8];
 
