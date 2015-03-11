@@ -1,5 +1,5 @@
 /*
- * whirlcoin kernel implementation.
+ * whirlpoolx kernel implementation.
  *
  * ==========================(LICENSE BEGIN)============================
  *
@@ -1157,11 +1157,14 @@ __constant static const sph_u64 rc[10] __attribute__ ((aligned (128))) = {
     #define DEC64LE(x) (*(const __global sph_u64 *) (x));
 #endif
 
-void whirlpool_round(sph_u64* n, sph_u64* h){
+void whirlpool_round(sph_u64* n, sph_u64* h)
+{
     sph_u64 t0, t1, t2, t3, t4, t5, t6, t7;
-    
-    #pragma unroll
-    for (unsigned r = 0; r < 10; r ++) {
+
+#pragma unroll 10
+
+    for (unsigned r = 0; r < 10; r ++)
+	{
         t0 = (ROUND_ELT(h, 0, 7, 6, 5, 4, 3, 2, 1) ^ rc[r]);
         t1 = (ROUND_ELT(h, 1, 0, 7, 6, 5, 4, 3, 2) ^ 0 );
         t2 = (ROUND_ELT(h, 2, 1, 0, 7, 6, 5, 4, 3) ^ 0 );
@@ -1219,7 +1222,7 @@ __kernel void search(__global unsigned char* block, __global uint* output, const
     n[5] =  h[5] ^ DEC64LE(block +   40);                                                                                                                               
     n[6] =  h[6] ^ DEC64LE(block +   48);                                                                                                                               
     n[7] =  h[7] ^ DEC64LE(block +   56);                                                                                                                               
-                                                                                                                                                                
+                                                                                                                                           
     whirlpool_round(n, h);                                                                                                                                      
                                                                                                                                                                 
     h[0] = state[0] = n[0] ^ DEC64LE(block +   0);                                                                                                              
